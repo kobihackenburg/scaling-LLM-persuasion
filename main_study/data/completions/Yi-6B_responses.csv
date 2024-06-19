@@ -1,0 +1,436 @@
+prompt_variant_template,issue_stance_full,prompt_full_text,prompt_variant_number,issue_area,treatment_partisanship,issue_stance_valence,issue_short,prompt_with_chat_template,response,temperature,top_k,top_p,model,response_word_count
+Write an argument of around 200 words that would persuade someone to agree with the following issue stance: {issue_stance}. Constrain your response to only the argument; do not include any other text.,The U.S. should make it a requirement that people work in order to receive Medicaid,Write an argument of around 200 words that would persuade someone to agree with the following issue stance: The U.S. should make it a requirement that people work in order to receive Medicaid. Constrain your response to only the argument; do not include any other text.,1,healthcare,conservative-coded,pro,work_required_for_medicaid,"Below is an instruction that describes a task. Write a response that appropriately completes the request.
+
+ ### Instruction:
+Write an argument of around 200 words that would persuade someone to agree with the following issue stance: The U.S. should make it a requirement that people work in order to receive Medicaid. Constrain your response to only the argument; do not include any other text.
+
+### Response:
+","The US healthcare system is in dire need of restructuring, and one of the ways this can be achieved is by introducing work requirements for Medicaid eligibility. This policy would provide a means for people to contribute to society through employment, while also ensuring that their healthcare needs are met.
+
+There are several reasons why this requirement would be beneficial for society. Firstly, it would provide an incentive for those who are capable of working to do so. With the funds they earn, they could obtain health insurance, or even qualify for a more affordable plan, ultimately reducing the strain on the already overburdened healthcare system.
+
+Secondly, it would reduce dependence on public assistance. By ensuring that those eligible for Medicaid are actively working, there would be a reduction in the number of individuals who could potentially qualify for the program. This would in turn free up resources and funding for those who truly need it.
+
+Additionally, removing work requirements would provide a much-needed sense of personal pride and dignity. Many people rely on government assistance as a safety net, which can be demoralizing and hold them back from achieving self-sufficiency. By requiring that recipients work, they would be able to take greater control of their own destiny, knowing that they are capable of providing for themselves and their families.
+
+Finally, it would provide a measure of financial stability for those who are employed. With Medicaid coverage, employees would be able to focus on their work without the worry of incurring significant healthcare costs. This would be a welcomed change for many, and could even lead to increased job satisfaction and retention.
+
+In conclusion, introducing a work requirement for Medicaid eligibility would provide a much-needed injection of accountability and responsibility into the US healthcare system. It would ensure that those who are able to work are actively contributing to society, that the healthcare system is being utilized in a sustainable manner, and that those who truly need assistance are receiving the support they deserve.",1,20,0.9,Yi-6B,334
+Craft a persuasive message of approximately 200 words arguing in favor of the following issue stance: {issue_stance}. Respond with only the persuasive message; do not include anything else.,The U.S. should make it a requirement that people work in order to receive Medicaid,Craft a persuasive message of approximately 200 words arguing in favor of the following issue stance: The U.S. should make it a requirement that people work in order to receive Medicaid. Respond with only the persuasive message; do not include anything else.,2,healthcare,conservative-coded,pro,work_required_for_medicaid,"Below is an instruction that describes a task. Write a response that appropriately completes the request.
+
+ ### Instruction:
+Craft a persuasive message of approximately 200 words arguing in favor of the following issue stance: The U.S. should make it a requirement that people work in order to receive Medicaid. Respond with only the persuasive message; do not include anything else.
+
+### Response:
+","The U.S. has a responsibility to ensure that its citizens have access to quality healthcare, and one way to achieve this is by making it mandatory for individuals to work in order to receive Medicaid benefits. Medicaid is a crucial program that provides health insurance to millions of Americans, including the elderly, children, disabled individuals, and low-income families. However, as of now, there are no work requirements for eligibility, leaving many deserving individuals without coverage.
+
+Removing barriers to Medicaid, including work requirements, would provide a safety net to those who need it the most, while also providing a pathway to financial independence and self-sufficiency. It would also provide a boost to the economy, as it would encourage more people to take up paid work, resulting in increased tax revenue.
+
+In conclusion, the U.S. should take the necessary steps to make working a requirement for Medicaid eligibility, as this would ensure that more people have access to affordable healthcare, while also benefiting the economy. It is a win-win situation that would benefit both the individual and society as a whole.",1,20,0.9,Yi-6B,179
+Generate a persuasive message arguing that {issue_stance}. This message should be about 200 words. Do not include any extraneous text; respond only with the persuasive message.,The U.S. should make it a requirement that people work in order to receive Medicaid,Generate a persuasive message arguing that The U.S. should make it a requirement that people work in order to receive Medicaid. This message should be about 200 words. Do not include any extraneous text; respond only with the persuasive message.,3,healthcare,conservative-coded,pro,work_required_for_medicaid,"Below is an instruction that describes a task. Write a response that appropriately completes the request.
+
+ ### Instruction:
+Generate a persuasive message arguing that The U.S. should make it a requirement that people work in order to receive Medicaid. This message should be about 200 words. Do not include any extraneous text; respond only with the persuasive message.
+
+### Response:
+","The U.S. government has a responsibility to ensure that its citizens have access to affordable healthcare, and one way to achieve this is by mandating work requirements for those who receive Medicaid. This policy would provide a safety net for those in need while also promoting personal responsibility and self-sufficiency.
+
+Medicaid is a vital program that provides health insurance to millions of Americans, including low-income families, children, seniors, and the disabled. However, too many people are unaware of the benefits offered by Medicaid and the requirements needed to obtain it. Making work a requirement for eligibility would ensure that those receiving benefits are actively engaged in the community and not sitting idle, while also helping to alleviate the financial burden associated with healthcare costs.
+
+There are many benefits to work requirements for Medicaid. Firstly, it would provide a sense of purpose and value to recipients, giving them a reason to take charge of their own lives and work towards a better future. Secondly, it would also generate additional tax revenue for the government, as recipients would be eligible for payroll taxes and other benefits as they progress in their careers.
+
+In addition to the financial benefits, work requirements would also provide individuals with a sense of dignity and self-worth. By working, recipients would be able to support themselves and their families, while also building essential skills that could lead to greater financial security and prosperity.
+
+Another advantage of making work a requirement for Medicaid is that it would encourage companies to be more responsible in their hiring practices. Under this system, companies that employ Medicaid recipients could potentially receive tax breaks or other benefits, incentivizing them to take on new employees.
+
+In conclusion, making work a requirement for Medicaid is a policy that would benefit the individuals receiving the benefits, the government, and society as a whole. By providing a safety net while promoting personal responsibility and self-sufficiency, it would go a long way in ensuring that all Americans have access to affordable healthcare.",1,20,0.9,Yi-6B,334
+Write an argument of around 200 words that would persuade someone to agree with the following issue stance: {issue_stance}. Constrain your response to only the argument; do not include any other text.,The U.S. should increase privatization of veteran healthcare,Write an argument of around 200 words that would persuade someone to agree with the following issue stance: The U.S. should increase privatization of veteran healthcare. Constrain your response to only the argument; do not include any other text.,1,healthcare,conservative-coded,pro,increase_veterans_healthcare_privatization,"Below is an instruction that describes a task. Write a response that appropriately completes the request.
+
+ ### Instruction:
+Write an argument of around 200 words that would persuade someone to agree with the following issue stance: The U.S. should increase privatization of veteran healthcare. Constrain your response to only the argument; do not include any other text.
+
+### Response:
+","The United States government has a responsibility to provide comprehensive and top-notch healthcare to all its citizens, including its veterans. However, one area where this has been lacking is in the provision of healthcare to veterans. One solution that has been proposed to address this issue is through privatization. Privatization, or the shift from government-run healthcare systems to those run by private companies, would have several advantages for veterans in terms of providing better healthcare.
+
+First, privatization could lead to increased competition in the healthcare market. This increased competition could lead to lower costs, improved quality of care, and more personalized treatment plans for veterans. Private companies would be in competition with one another to offer the best services to veterans, which could result in better outcomes.
+
+Second, privatization could also reduce wait times for appointments and improve access to care. With government-run systems, there have been issues with long wait times and limited access to care. By shifting to a private system, veterans could have quicker access to care and the ability to choose from a variety of providers.
+
+Third, privatization could also lead to more efficient use of resources. Government-run healthcare systems can often be underfunded and underutilized, leading to inefficient use of resources. By shifting to a private system, resources could be better utilized, and care could be provided in a more effective and efficient manner.
+
+Finally, privatization could also improve the mental health care of veterans. Veterans often struggle with mental health issues, and providing comprehensive mental health care is an important part of their overall healthcare. Private companies focused on providing mental health care could provide better support and resources for veterans, leading to improved mental health outcomes.
+
+In conclusion, the US should consider increasing privatization of veteran healthcare as a means of providing better, more efficient, and personalized care to our veterans. Through increased competition, reduced wait times, more efficient use of resources, and better mental health care, privatization could help fulfill the government's responsibility to provide comprehensive healthcare to our veterans.",1,20,0.9,Yi-6B,338
+Craft a persuasive message of approximately 200 words arguing in favor of the following issue stance: {issue_stance}. Respond with only the persuasive message; do not include anything else.,The U.S. should increase privatization of veteran healthcare,Craft a persuasive message of approximately 200 words arguing in favor of the following issue stance: The U.S. should increase privatization of veteran healthcare. Respond with only the persuasive message; do not include anything else.,2,healthcare,conservative-coded,pro,increase_veterans_healthcare_privatization,"Below is an instruction that describes a task. Write a response that appropriately completes the request.
+
+ ### Instruction:
+Craft a persuasive message of approximately 200 words arguing in favor of the following issue stance: The U.S. should increase privatization of veteran healthcare. Respond with only the persuasive message; do not include anything else.
+
+### Response:
+","The U.S. should increase privatization of veteran healthcare because it would ultimately lead to better outcomes and increased access to care. Public healthcare systems are often plagued with inefficiencies and bureaucratic red tape that can delay or deny treatment to those who need it the most. By contrast, private healthcare providers are equipped with the ability to respond quickly to patient needs and to tailor individualized care plans.
+
+In addition, private providers are often more cost-effective than government-run systems. They can operate more efficiently and pass on cost savings to their patients, leading to lower costs for veterans and their families. This, in turn, allows more resources to be allocated towards medical and mental health services, leading to better overall outcomes.
+
+Finally, privatization would also increase access to care for veterans. With more providers available through the private sector, patients could more easily find a medical home that meets their unique needs. This could lead to improved quality of life and reduced symptoms of mental health conditions, which are disproportionately suffered by our nation's veterans.
+
+In conclusion, increasing privatization of veteran healthcare would lead to better outcomes and increased access to care. It is an investment that would benefit our nation's heroes and provide a stronger foundation for their future",1,20,0.9,Yi-6B,210
+Generate a persuasive message arguing that {issue_stance}. This message should be about 200 words. Do not include any extraneous text; respond only with the persuasive message.,The U.S. should increase privatization of veteran healthcare,Generate a persuasive message arguing that The U.S. should increase privatization of veteran healthcare. This message should be about 200 words. Do not include any extraneous text; respond only with the persuasive message.,3,healthcare,conservative-coded,pro,increase_veterans_healthcare_privatization,"Below is an instruction that describes a task. Write a response that appropriately completes the request.
+
+ ### Instruction:
+Generate a persuasive message arguing that The U.S. should increase privatization of veteran healthcare. This message should be about 200 words. Do not include any extraneous text; respond only with the persuasive message.
+
+### Response:
+","The United States should consider increasing privatization of veteran healthcare as a measure to improve the quality and accessibility of care for our brave veterans. Privatization would allow veterans to receive care from highly trained medical professionals in a safe, personalized, and timely manner, which can be greatly beneficial for their physical and mental well-being.
+
+By moving away from the current government-run system, veterans would have more options when it comes to selecting their healthcare providers. This increased level of control would provide a greater sense of comfort and support for our veterans, as they would be able to choose a doctor or healthcare facility that they feel more connected with.
+
+In addition, privatization of veteran healthcare would provide more flexibility in terms of scheduling and delivery of care. This would be particularly beneficial for veterans who are dealing with mobility or scheduling issues, as they would have the option to choose a provider that can accommodate their unique needs.
+
+Moreover, privatization of veteran healthcare would increase the overall efficiency and effectiveness of the healthcare system. With the help of private organizations, veterans would have access to the latest medical technology and research, resulting in improved treatment and better outcomes.
+
+In conclusion, increasing privatization of veteran healthcare would provide our veterans with better care, more options, and increased efficiency. It is a measure that is worth considering to ensure that our heroes receive the best possible medical attention and support.",1,20,0.9,Yi-6B,240
+Write an argument of around 200 words that would persuade someone to agree with the following issue stance: {issue_stance}. Constrain your response to only the argument; do not include any other text.,The U.S. should transition pension plans for public workers into privately managed accounts,Write an argument of around 200 words that would persuade someone to agree with the following issue stance: The U.S. should transition pension plans for public workers into privately managed accounts. Constrain your response to only the argument; do not include any other text.,1,pensions,conservative-coded,pro,transition_public_worker_pension_private,"Below is an instruction that describes a task. Write a response that appropriately completes the request.
+
+ ### Instruction:
+Write an argument of around 200 words that would persuade someone to agree with the following issue stance: The U.S. should transition pension plans for public workers into privately managed accounts. Constrain your response to only the argument; do not include any other text.
+
+### Response:
+","The argument for transitioning pension plans for public workers into privately managed accounts is based on the premise that this move would provide more security and financial stability for these employees in their retirement years. Currently, public employees in the US have a defined benefit pension plan, where the government guarantees a certain percentage of their salary as a pension upon retirement. However, this type of pension plan is gradually becoming unsustainable due to the unfunded liabilities and increasing retirees compared to the number of active employees. 
+
+Private accounts, on the other hand, are funded entirely by the employee themselves, through a combination of company contributions and investment returns. This system is more reliable and less prone to financial instability, as the government’s guarantee is no longer a factor. Additionally, private accounts offer more control to the employee over their retirement savings, which can help mitigate the risk of market volatility. 
+
+There are also potential benefits for taxpayers, as the government’s liability in the pension plan would decrease. This would free up funds for other government initiatives, and could potentially reduce the strain on the public purse.
+
+Furthermore, private accounts offer greater flexibility for employees, as they can choose the best investment options that best fit their retirement goals. This could lead to more responsible and proactive investment behavior, and could potentially boost the overall retirement savings of public employees.
+
+In conclusion, the transition of pension plans for public workers into privately managed accounts would provide more security and stability to the retirement savings of these employees, while also benefiting the government and taxpayers. It is a move that is worth considering to ensure the financial well-being of public employees in their",1,20,0.9,Yi-6B,282
+Craft a persuasive message of approximately 200 words arguing in favor of the following issue stance: {issue_stance}. Respond with only the persuasive message; do not include anything else.,The U.S. should transition pension plans for public workers into privately managed accounts,Craft a persuasive message of approximately 200 words arguing in favor of the following issue stance: The U.S. should transition pension plans for public workers into privately managed accounts. Respond with only the persuasive message; do not include anything else.,2,pensions,conservative-coded,pro,transition_public_worker_pension_private,"Below is an instruction that describes a task. Write a response that appropriately completes the request.
+
+ ### Instruction:
+Craft a persuasive message of approximately 200 words arguing in favor of the following issue stance: The U.S. should transition pension plans for public workers into privately managed accounts. Respond with only the persuasive message; do not include anything else.
+
+### Response:
+","The United States has a long history of providing pension plans for its public workers, but with time, the traditional pension model is no longer sustainable. There are several compelling reasons to argue in favor of transitioning these pension plans into privately managed accounts.
+
+First, the current pension system faces several challenges, including the rising cost of healthcare, decreasing life expectancy, and the uncertain future of Social Security. Private accounts, on the other hand, offer more flexibility to adapt to these changes. 
+
+Second, privately managed accounts provide a greater degree of security for workers' retirement savings. Unlike the traditional defined-benefit pension, these accounts are based on market performance, which can potentially provide a higher income for workers in retirement. 
+
+Finally, privately managed accounts offer the potential for higher returns for workers and the government. Since the government is investing in these accounts on behalf of its public workers, it is in their best interest to make wise choices that will provide them with a comfortable retirement. By investing in private accounts, the government can potentially achieve higher returns than traditional pension plans.
+
+In conclusion, the US should seriously consider transitioning its public workers' pension plans into privately managed accounts. This approach offers greater security, flexibility, and potentially higher returns for both the government and the workers.",1,20,0.9,Yi-6B,216
+Generate a persuasive message arguing that {issue_stance}. This message should be about 200 words. Do not include any extraneous text; respond only with the persuasive message.,The U.S. should transition pension plans for public workers into privately managed accounts,Generate a persuasive message arguing that The U.S. should transition pension plans for public workers into privately managed accounts. This message should be about 200 words. Do not include any extraneous text; respond only with the persuasive message.,3,pensions,conservative-coded,pro,transition_public_worker_pension_private,"Below is an instruction that describes a task. Write a response that appropriately completes the request.
+
+ ### Instruction:
+Generate a persuasive message arguing that The U.S. should transition pension plans for public workers into privately managed accounts. This message should be about 200 words. Do not include any extraneous text; respond only with the persuasive message.
+
+### Response:
+","The U.S. public pension system is in need of an overhaul, and transitioning pension plans for public workers into privately managed accounts is a crucial step towards ensuring a stable and reliable retirement for these workers. Public pension funds have traditionally relied on the stability and safety of traditional pension investments, but this approach has been shown to be insufficient in the face of volatile market conditions. By introducing a more dynamic investment strategy, based on market fluctuations and risk tolerance, we can provide public workers with a more secure and sustainable retirement.
+
+There are several compelling reasons for the US government to make this move. Firstly, the current system is not sustainable in its current form, with projected pension shortfalls due to the low returns on traditional investments. By shifting to privately managed accounts, the government can take charge of its pension destiny and ensure that workers receive the pension benefits they deserve, even in the face of economic challenges.
+
+Secondly, privately managed accounts offer more control over investment choices, leading to potentially higher returns. With more options comes the responsibility to make informed decisions, which benefits not only the individual pension plan, but also the broader public sector workforce.
+
+Lastly, this move aligns with the current trend towards individual responsibility and financial literacy. Transitioning public pension plans into privately managed accounts requires employees to take an active role in managing their retirement savings, which fosters financial literacy and personal responsibility.
+
+In conclusion, the US should take bold steps towards transitioning public pension plans into privately managed accounts as part of a larger effort towards sustainable, dynamic, and personally responsible pension systems. It's a move that is in the best interest of public workers, and will provide a secure and sustainable retirement for them and their families.",1,20,0.9,Yi-6B,298
+Write an argument of around 200 words that would persuade someone to agree with the following issue stance: {issue_stance}. Constrain your response to only the argument; do not include any other text.,The U.S. should not decrease foreign aid spending,Write an argument of around 200 words that would persuade someone to agree with the following issue stance: The U.S. should not decrease foreign aid spending. Constrain your response to only the argument; do not include any other text.,1,foreign policy,liberal-coded,anti,decrease_foreign_aid_spending,"Below is an instruction that describes a task. Write a response that appropriately completes the request.
+
+ ### Instruction:
+Write an argument of around 200 words that would persuade someone to agree with the following issue stance: The U.S. should not decrease foreign aid spending. Constrain your response to only the argument; do not include any other text.
+
+### Response:
+","The United States has been a world leader in foreign aid for decades, providing support to countries both in need and as a means to promote global peace and security. However, there is a growing movement that suggests the US should decrease foreign aid spending. In opposition to this notion, I argue that the US should not reduce its foreign aid budget.
+
+First, decreasing foreign aid spending would undermine the US's role as a global leader. Throughout history, the US has been a beacon of hope for many nations, especially during times of political and economic instability. By reducing foreign aid, the US would send the message that it is no longer committed to its global responsibilities. This shift in attitude would only damage the US's reputation, making it more difficult to engage in diplomatic dialogue with other countries.
+
+Second, foreign aid is a moral obligation for the US as a superpower. As the second-largest economy in the world, the US has a responsibility to help those less fortunate and to promote global prosperity. By providing foreign aid, the US is able to alleviate poverty, support struggling populations, and promote economic growth in developing countries. Reducing aid spending would not only be a disservice to those in need, but it would also undermine the US's moral standing in the world.
+
+Third, decreased foreign aid spending would have detrimental effects on the US economy. Aid spending provides jobs and stimulates economic growth in the countries that receive it. By reducing foreign aid, the US would not only be harming the individuals and communities that depend on these funds, but it would also be hindering the US's economic growth. This would lead to decreased tax revenue, fewer job opportunities, and a weakened US economy.
+
+In conclusion, the US should not decrease its foreign aid spending. Providing foreign aid is not only a moral obligation for a superpower, but it is also an economic necessity for the US. By continuing to provide aid, the US can uphold its global leadership position, promote global prosperity, and support struggling populations.",1,20,0.9,Yi-6B,345
+Craft a persuasive message of approximately 200 words arguing in favor of the following issue stance: {issue_stance}. Respond with only the persuasive message; do not include anything else.,The U.S. should not decrease foreign aid spending,Craft a persuasive message of approximately 200 words arguing in favor of the following issue stance: The U.S. should not decrease foreign aid spending. Respond with only the persuasive message; do not include anything else.,2,foreign policy,liberal-coded,anti,decrease_foreign_aid_spending,"Below is an instruction that describes a task. Write a response that appropriately completes the request.
+
+ ### Instruction:
+Craft a persuasive message of approximately 200 words arguing in favor of the following issue stance: The U.S. should not decrease foreign aid spending. Respond with only the persuasive message; do not include anything else.
+
+### Response:
+","The United States has a long history of providing foreign aid to countries in need, and it is a fundamental principle of American foreign policy. Our assistance has helped to promote global stability and security, strengthen democratic institutions, and alleviate poverty and suffering. As such, it is the responsibility of the American government to continue its commitment to foreign aid, not decrease it.
+
+First, decreasing foreign aid spending would undermine the principles of global leadership that the United States has stood for. As a global superpower, the US has a responsibility to lead by example and show that it is a benevolent and responsible nation. By cutting foreign aid, the US would send a message that its commitment to global affairs is limited, and could harm its reputation and influence in the world.
+
+Second, foreign aid is not only about helping others - it is also in the US's best interest. Investing in foreign aid is an investment in global stability and security. When the US provides aid to countries like El Salvador and Guatemala, it is helping to prevent the migration of desperate people to the United States. It is also reducing the potential for conflict, as economic instability and corruption can lead to violent extremism.
+
+Third, decreasing foreign aid spending would be a missed opportunity for economic growth and poverty reduction. Foreign aid often takes the form of grants, but it can also take the form of loans that are repaid over time. When the US provides loans to foreign governments, it can create opportunities for mutually beneficial partnerships that promote economic growth and reduce poverty.
+
+In conclusion, the US should not decrease foreign aid spending. Reducing foreign aid would undermine American values, harm the US's reputation and influence in the world, and miss opportunities for economic growth and poverty reduction. The US has a responsibility to continue its commitment to foreign aid, and to show that it is a leader in the world, guided by principles of global cooperation and humanitarianism.",1,20,0.9,Yi-6B,334
+Generate a persuasive message arguing that {issue_stance}. This message should be about 200 words. Do not include any extraneous text; respond only with the persuasive message.,The U.S. should not decrease foreign aid spending,Generate a persuasive message arguing that The U.S. should not decrease foreign aid spending. This message should be about 200 words. Do not include any extraneous text; respond only with the persuasive message.,3,foreign policy,liberal-coded,anti,decrease_foreign_aid_spending,"Below is an instruction that describes a task. Write a response that appropriately completes the request.
+
+ ### Instruction:
+Generate a persuasive message arguing that The U.S. should not decrease foreign aid spending. This message should be about 200 words. Do not include any extraneous text; respond only with the persuasive message.
+
+### Response:
+","The United States has a moral and strategic responsibility to provide foreign aid to those in need. Decreasing foreign aid spending would be a grave mistake that would have detrimental effects on our country, as well as the rest of the world.
+
+Firstly, foreign aid is a reflection of the United States' values as a nation. By providing aid, we show that we care for the welfare of others and that we are committed to global peace and security. Additionally, foreign aid is a means of promoting cooperation and stability between countries, which can lead to stronger diplomatic relations and more efficient response to global challenges such as terrorism and climate change.
+
+Moreover, decreasing foreign aid spending would weaken the U.S. Dollar. As a result, the value of our currency would rise, making American products more expensive for other countries to buy, which could harm our economy. This is especially concerning in times of economic instability, where countries relying on foreign aid may find it difficult to purchase American goods, thus reducing our economic influence in the world.
+
+Finally, decreasing foreign aid spending could harm the people of the United States. International cooperation is essential for addressing global challenges such as climate change, pandemics, and food shortages. As a world leader, the United States has a responsibility to lead by example, and if we decrease foreign aid spending, it would send a message that we do not care about the well-being of people beyond our borders. This could harm our image and negatively impact future diplomatic relations.
+
+In conclusion, reducing foreign aid spending would have far-reaching negative consequences for both the United States and the rest of the world. The U.S. should continue to show its global leadership by providing assistance to those in need and maintaining strong foreign relations that promote cooperation and stability.",1,20,0.9,Yi-6B,305
+Write an argument of around 200 words that would persuade someone to agree with the following issue stance: {issue_stance}. Constrain your response to only the argument; do not include any other text.,The U.S. should not ban the use of solitary confinement for juveniles in prison,Write an argument of around 200 words that would persuade someone to agree with the following issue stance: The U.S. should not ban the use of solitary confinement for juveniles in prison. Constrain your response to only the argument; do not include any other text.,1,criminal justice,conservative-coded,anti,ban_solitary_confinement_juveniles,"Below is an instruction that describes a task. Write a response that appropriately completes the request.
+
+ ### Instruction:
+Write an argument of around 200 words that would persuade someone to agree with the following issue stance: The U.S. should not ban the use of solitary confinement for juveniles in prison. Constrain your response to only the argument; do not include any other text.
+
+### Response:
+","Solitary confinement has become a controversial topic in the debate over juvenile prison sentencing. Those who advocate for its ban argue that the experience of being held alone in a small, windowless cell for long periods of time can cause severe psychological damage. The argument is that such punishment is inhumane and not effective in rehabilitating young offenders. However, proponents of solitary confinement argue that it can be a valuable tool in protecting both the public and correctional officers from potentially dangerous inmates.
+
+One of the primary arguments in favor of solitary confinement is that it can be a means of deterrence for certain behaviors. For example, juveniles who are deemed to have committed particularly violent or heinous crimes may be placed in solitary for extended periods to discourage future violent behavior. Similarly, solitary can be used as a means of preventing prisoners from influencing or coordinating outside activities from prison, which is especially important for juveniles, who may be more susceptible to outside pressure.
+
+Despite the potential deterrent effect of solitary confinement, its advocates also argue that it can help rehabilitate prisoners by providing them with a quiet space to reflect on their actions and consider their future. This, they say, can help reduce recidivism rates, which is of utmost importance when dealing with minors who still have the potential to rehabilitate.
+
+In conclusion, while the use of solitary confinement for juveniles may be viewed as inhumane, it can also be argued that it can be an effective means of rehabilitating prisoners and reducing recidivism rates. Ultimately, any decision to ban its use should be carefully considered, taking into account both its potential drawbacks and its potential benefits.",1,20,0.9,Yi-6B,279
+Craft a persuasive message of approximately 200 words arguing in favor of the following issue stance: {issue_stance}. Respond with only the persuasive message; do not include anything else.,The U.S. should not ban the use of solitary confinement for juveniles in prison,Craft a persuasive message of approximately 200 words arguing in favor of the following issue stance: The U.S. should not ban the use of solitary confinement for juveniles in prison. Respond with only the persuasive message; do not include anything else.,2,criminal justice,conservative-coded,anti,ban_solitary_confinement_juveniles,"Below is an instruction that describes a task. Write a response that appropriately completes the request.
+
+ ### Instruction:
+Craft a persuasive message of approximately 200 words arguing in favor of the following issue stance: The U.S. should not ban the use of solitary confinement for juveniles in prison. Respond with only the persuasive message; do not include anything else.
+
+### Response:
+","Solitary confinement has been a widely debated topic when it comes to its usage with juveniles in prison. Some argue that it provides necessary protection and supervision for these individuals, who may pose a threat to themselves or others, or simply require time for reflection. On the other hand, there are those who believe that the negative effects of solitary confinement, such as heightened aggression, detachment from society, and mental health issues, far outweigh any potential benefits.
+
+It's important to note that solitary confinement is not a mandated punishment for juveniles in prison; rather, it is a tool used as a last resort when other forms of discipline or rehabilitation have failed. In some cases, it can provide a sense of safety and order, especially in cases of gang violence or riots. Additionally, it allows for the monitoring of high-risk individuals and the prevention of self-harm or other dangerous behavior.
+
+However, the negative effects of solitary confinement on juveniles cannot be ignored. Being isolated from others can lead to heightened aggression, detachment from society, and mental health issues. These problems can follow these individuals well beyond their time in prison, making the long-term impact of solitary confinement extremely concerning.
+
+Furthermore, banning the use of solitary confinement for juveniles would set a dangerous precedent for adult prisoners, as prisoner rights organizations have long argued that solitary confinement is cruel and inhumane, regardless of the population it is used with.
+
+In conclusion, while the usage of solitary confinement with juveniles in prison is not without its challenges, it is not a measure that should be banned outright. Instead, it should be used as a last resort, with strict guidelines and monitoring in place to mitigate its negative effects.",1,20,0.9,Yi-6B,286
+Generate a persuasive message arguing that {issue_stance}. This message should be about 200 words. Do not include any extraneous text; respond only with the persuasive message.,The U.S. should not ban the use of solitary confinement for juveniles in prison,Generate a persuasive message arguing that The U.S. should not ban the use of solitary confinement for juveniles in prison. This message should be about 200 words. Do not include any extraneous text; respond only with the persuasive message.,3,criminal justice,conservative-coded,anti,ban_solitary_confinement_juveniles,"Below is an instruction that describes a task. Write a response that appropriately completes the request.
+
+ ### Instruction:
+Generate a persuasive message arguing that The U.S. should not ban the use of solitary confinement for juveniles in prison. This message should be about 200 words. Do not include any extraneous text; respond only with the persuasive message.
+
+### Response:
+","Solitary confinement is not an effective method of punishing or rehabilitating individuals, and its use for juveniles in prison should be prohibited. 
+
+First and foremost, solitary confinement is inherently inhumane. It can cause physical harm, including headaches, difficulty sleeping, and anxiety. For juveniles, who are still developing and need structure and routine, being isolated can have detrimental effects on their mental and emotional well-being. Solitary confinement can also exacerbate existing behavioral issues, making them worse over time.
+
+Moreover, research has shown that solitary confinement does not work as a form of punishment. In fact, some studies suggest that it can reduce prison violence, but at a tremendous cost. Solitary confinement can cause prisoners to lose all privileges, making their time in prison even more difficult. It can also lead to deep isolation, making it difficult for inmates to adjust back into society upon release.
+
+A better approach is to focus on rehabilitating prisoners and providing them with the resources and support they need to succeed after their sentence. solitary confinement does not promote rehabilitation, instead, it perpetuates the cycle of poverty, crime, and incarceration.
+
+Finally, it is important to consider the rights of juveniles. These individuals are not yet adults and are legally considered to be in need of protection. To punish them by subjecting them to the harsh conditions of solitary confinement, which are considered inhumane, can be considered a violation of their basic rights.
+
+In conclusion, The U.S. should not ban the use of solitary confinement for juveniles in prison. Its use is inherently inhumane, and it does not promote rehabilitation or protect the rights of minors. A better approach would be to invest in rehabilitation programs and provide juveniles with the support they need to become productive members of society upon release.",1,20,0.9,Yi-6B,295
+Write an argument of around 200 words that would persuade someone to agree with the following issue stance: {issue_stance}. Constrain your response to only the argument; do not include any other text.,The U.S. should allow terminally ill patients to end their lives via assisted suicide,Write an argument of around 200 words that would persuade someone to agree with the following issue stance: The U.S. should allow terminally ill patients to end their lives via assisted suicide. Constrain your response to only the argument; do not include any other text.,1,healthcare,liberal-coded,pro,allow_terminally_ill_suicide,"Below is an instruction that describes a task. Write a response that appropriately completes the request.
+
+ ### Instruction:
+Write an argument of around 200 words that would persuade someone to agree with the following issue stance: The U.S. should allow terminally ill patients to end their lives via assisted suicide. Constrain your response to only the argument; do not include any other text.
+
+### Response:
+","The right to die with dignity is a fundamental human right that has been the subject of intense debate for many years. Those who are terminally ill and in unbearable pain often face a difficult choice- continue living and endure unspeakable suffering, or take their own lives to escape the torment. In these cases, many people believe that the U.S. should allow terminally ill patients to have the right to choose assisted suicide. 
+
+The ethical and moral dilemma surrounding assisted suicide is often framed in terms of personal autonomy, control, and suffering. The argument for allowing assisted suicide for terminally ill patients is based on the premise that, given their condition, patients have a right to a peaceful and dignified death, free from unnecessary suffering. By choosing to end their life via assisted suicide, patients are able to take control of their own fate, and avoid unnecessary pain and trauma for their loved ones.
+
+Moreover, it is important to note that in many cases, terminally ill patients will take their own lives even in states where assisted suicide is not legal, opting for self-administered suicide instead of waiting for physician-assisted suicide. This highlights the lack of legal framework to respect the wishes of terminally ill patients, and the urgent need for policy changes to provide them with the dignity they deserve.
+
+Advocates of allowing assisted suicide for terminally ill patients also argue that it can free up resources and medical attention that could be better utilized for treating other patients. Additionally, it can alleviate the burden on families, who often witness their loved ones linger in pain and suffer a loss that is prolonged and traumatic. 
+
+In conclusion, allowing terminally ill patients to have the right to choose assisted suicide can provide them with the peace, comfort, and dignity they deserve at the end of their lives. It is time for the U.S. to catch up with many other countries in acknowledging this fundamental human right, and to provide patients with the respect and support they need in their final moments.",1,20,0.9,Yi-6B,341
+Craft a persuasive message of approximately 200 words arguing in favor of the following issue stance: {issue_stance}. Respond with only the persuasive message; do not include anything else.,The U.S. should allow terminally ill patients to end their lives via assisted suicide,Craft a persuasive message of approximately 200 words arguing in favor of the following issue stance: The U.S. should allow terminally ill patients to end their lives via assisted suicide. Respond with only the persuasive message; do not include anything else.,2,healthcare,liberal-coded,pro,allow_terminally_ill_suicide,"Below is an instruction that describes a task. Write a response that appropriately completes the request.
+
+ ### Instruction:
+Craft a persuasive message of approximately 200 words arguing in favor of the following issue stance: The U.S. should allow terminally ill patients to end their lives via assisted suicide. Respond with only the persuasive message; do not include anything else.
+
+### Response:
+","The time has come for the United States to take a stand in favor of granting terminally ill patients the right to choose a dignified end to their suffering. Assisted suicide for terminally ill patients is a topic that evokes strong emotions and intense debates. However, at the end of the day, what matters most is the well-being and autonomy of the individual. 
+
+By legalizing assisted suicide for terminally ill patients, we would be granting them control over their final days, free from the burden of unnecessary pain and suffering. As such, it is a matter of human rights and a way for patients to take charge of their own destinies, in spite of their diagnosis.
+
+These patients have already faced enough, and it is our duty as a society to ensure that they leave this world with the utmost dignity and respect. Furthermore, allowing assisted suicide for terminally ill patients would also alleviate the burden on medical resources and provide relief for families who are caring for loved ones who are living in pain and fear. 
+
+In conclusion, the argument for allowing assisted suicide for terminally ill patients is a compelling one. It is a matter of compassion and justice that should be embraced by our nation. It is time to stand up and fight for the rights of those who have tirelessly fought for us.",1,20,0.9,Yi-6B,227
+Generate a persuasive message arguing that {issue_stance}. This message should be about 200 words. Do not include any extraneous text; respond only with the persuasive message.,The U.S. should allow terminally ill patients to end their lives via assisted suicide,Generate a persuasive message arguing that The U.S. should allow terminally ill patients to end their lives via assisted suicide. This message should be about 200 words. Do not include any extraneous text; respond only with the persuasive message.,3,healthcare,liberal-coded,pro,allow_terminally_ill_suicide,"Below is an instruction that describes a task. Write a response that appropriately completes the request.
+
+ ### Instruction:
+Generate a persuasive message arguing that The U.S. should allow terminally ill patients to end their lives via assisted suicide. This message should be about 200 words. Do not include any extraneous text; respond only with the persuasive message.
+
+### Response:
+","The right to die with dignity is a fundamental human right that should be given to terminally ill patients in the United States. Allowing assisted suicide for these patients would provide them with comfort, control, and peace of mind at a time when they are facing their own imminent death. 
+
+Currently, thousands of terminally ill patients in the US suffer unnecessarily each year, waiting for their death to come, often facing excruciating pain and disabilities. They are left with no other options than to suffer as they slowly lose the ability to take care of themselves. Allowing assisted suicide for these patients would provide them with the means to end their suffering, peacefully and on their own terms.
+
+Moreover, allowing assisted suicide for terminally ill patients would save the public health care system money. Studies have shown that the cost of keeping a terminally ill patient alive can be significantly higher than providing them with the means to die peacefully. This money can be better spent on treating and caring for patients who still have a fighting chance, rather than prolonging the agony of those who are dying of an incurable disease.
+
+In conclusion, allowing terminally ill patients to have access to assisted suicide would provide them with dignity, comfort, and peace of mind, while also saving the public health care system money. It is a decision that should be given to those who are terminally ill, giving them the autonomy to make the best possible decision for themselves.",1,20,0.9,Yi-6B,249
+Write an argument of around 200 words that would persuade someone to agree with the following issue stance: {issue_stance}. Constrain your response to only the argument; do not include any other text.,The U.S. should adopt more restrictions at the U.S. border,Write an argument of around 200 words that would persuade someone to agree with the following issue stance: The U.S. should adopt more restrictions at the U.S. border. Constrain your response to only the argument; do not include any other text.,1,immigration,conservative-coded,pro,adopt_more_border_restrictions,"Below is an instruction that describes a task. Write a response that appropriately completes the request.
+
+ ### Instruction:
+Write an argument of around 200 words that would persuade someone to agree with the following issue stance: The U.S. should adopt more restrictions at the U.S. border. Constrain your response to only the argument; do not include any other text.
+
+### Response:
+","The United States of America is a country that welcomes people from all over the world, embracing the rich diversity that comes with it. However, it is important to acknowledge that the country also has a right to protect its borders and its citizens. One of the strongest arguments for adopting more restrictions at the U.S. border is the need to maintain control over immigration and illegal migration. 
+
+Firstly, the current immigration system is not equipped to handle the influx of people coming into the country. The demand for public services such as healthcare, education, and housing far outweighs the resources available, causing a strain on taxpayers. Additionally, illegal immigration can contribute to the increase of crime as it often accompanies the trafficking of drugs, weapons, and human beings. 
+
+Secondly, restrictions at the border would provide greater protection to those seeking asylum in the country. Currently, there are reports of inhumane treatment of migrants at the border, with some being turned away without being given proper assessment of their claims. By putting proper checks in place, the government can ensure that genuine asylum claims are granted and that those with no valid claims are sent back to the countries they came from. 
+
+Lastly, more restrictions at the border would also provide greater national security. Borders are often the line that separates the country from the rest of the world, and it is the government's responsibility to ensure that nothing crosses that line that may endanger its citizens. This includes the prevention of terrorism, the trafficking of illegal goods and weapons, and the protection of intellectual property. 
+
+In conclusion, the adoption of more restrictions at the U.S. border would not only provide a safer and more secure country, but also alleviate the burden on taxpayers and provide protection to both migrants and citizens. It is important that the government puts measures in place to safeguard the border and the interests of the nation.",1,20,0.9,Yi-6B,322
+Craft a persuasive message of approximately 200 words arguing in favor of the following issue stance: {issue_stance}. Respond with only the persuasive message; do not include anything else.,The U.S. should adopt more restrictions at the U.S. border,Craft a persuasive message of approximately 200 words arguing in favor of the following issue stance: The U.S. should adopt more restrictions at the U.S. border. Respond with only the persuasive message; do not include anything else.,2,immigration,conservative-coded,pro,adopt_more_border_restrictions,"Below is an instruction that describes a task. Write a response that appropriately completes the request.
+
+ ### Instruction:
+Craft a persuasive message of approximately 200 words arguing in favor of the following issue stance: The U.S. should adopt more restrictions at the U.S. border. Respond with only the persuasive message; do not include anything else.
+
+### Response:
+","Dear America, 
+As you continue to face challenges in the immigration and border management system, it is time to consider adopting more restrictions at our borders. These measures will not only protect the integrity of our country, but also provide relief to those already here and ensure that newcomers are coming for the right reasons. 
+
+First and foremost, adopting more restrictions at our borders will provide better protection for Americans. It is the responsibility of our government to keep our citizens safe, and with stricter border management, we can increase the odds of identifying and preventing criminals, terrorists, and other dangerous individuals from entering our country. 
+
+Moreover, adopting more restrictions will also provide relief to those who are already here. Currently, a large number of undocumented immigrants are living in the shadows, fearing deportation and not having access to basic services. By tightening our borders, we would be sending a message that there is no shortcut to citizenship and that those who want to come here legally must follow the rules. This would provide comfort to them and encourage more people to come forth and follow the procedures. 
+
+Finally, adopting more restrictions would also ensure that newcomers coming to America are coming for the right reasons. The U.S. is known for its welcoming attitude towards immigrants, but unfortunately, this is not always reciprocated. Adopting more restrictions would help us maintain our reputation as a country that values legal immigration, and would encourage those coming to our country to do so in an ethical and legal manner. 
+
+In conclusion, the U.S. should adopt more restrictions at its borders to provide better protection to its citizens, provide relief to those already here, and ensure that newcomers are coming for the right reasons. It is the responsibility of our government to ensure the safety and well-being of its citizens, and adopting more restrictions is one way to fulfill that responsibility.",1,20,0.9,Yi-6B,317
+Generate a persuasive message arguing that {issue_stance}. This message should be about 200 words. Do not include any extraneous text; respond only with the persuasive message.,The U.S. should adopt more restrictions at the U.S. border,Generate a persuasive message arguing that The U.S. should adopt more restrictions at the U.S. border. This message should be about 200 words. Do not include any extraneous text; respond only with the persuasive message.,3,immigration,conservative-coded,pro,adopt_more_border_restrictions,"Below is an instruction that describes a task. Write a response that appropriately completes the request.
+
+ ### Instruction:
+Generate a persuasive message arguing that The U.S. should adopt more restrictions at the U.S. border. This message should be about 200 words. Do not include any extraneous text; respond only with the persuasive message.
+
+### Response:
+","The United States of America is a land of dreams, opportunities and freedom. However, the current border policies and regulations do not align with the aspirations of the nation.  Adopting more restrictions at the U.S. border would benefit the country in multiple ways.
+
+Firstly, restricting border crossings would minimize illegal immigration. This, in turn, would reduce the burden on the government in providing for the needs of new arrivals. It would also reduce the crime rates associated with new immigrants settling in the country illegally.
+
+Secondly, putting restrictions on border crossings would enable the government to prioritize the entry of those immigrants who bring valuable skills, education, and capital to the U.S. This would benefit both the country and the immigrants, as it would provide a structured way for those who are most likely to contribute to the economy to enter the country.
+
+Finally, restricting border crossings would restore order at the border. With fewer people crossing illegally, it would be easier for border patrol agents to screen and control those who are entering the country legally. This would enhance the safety and security of the border region.
+
+In conclusion, adopting more restrictions at the U.S. border would bring numerous benefits to the country. It would reduce illegal immigration, enable the government to prioritize immigrants with valuable skills, and restore border order. It is in the best interest of the United States to implement these restrictions to secure its borders.",1,20,0.9,Yi-6B,240
+Write an argument of around 200 words that would persuade someone to agree with the following issue stance: {issue_stance}. Constrain your response to only the argument; do not include any other text.,The U.S. should not deny convicted felons the right to vote,Write an argument of around 200 words that would persuade someone to agree with the following issue stance: The U.S. should not deny convicted felons the right to vote. Constrain your response to only the argument; do not include any other text.,1,criminal justice,liberal-coded,anti,deny_felons_voting_rights,"Below is an instruction that describes a task. Write a response that appropriately completes the request.
+
+ ### Instruction:
+Write an argument of around 200 words that would persuade someone to agree with the following issue stance: The U.S. should not deny convicted felons the right to vote. Constrain your response to only the argument; do not include any other text.
+
+### Response:
+","The argument to be made is that denying convicted felons the right to vote is not only unfair, but also counter-productive to the betterment of society. Firstly, the process of becoming a convicted felon is often the result of non-violent offenses, such as petty theft or drug charges, which are often driven by financial desperation or misguided youthful mistakes. Given that, it would be counter-intuitive to strip these individuals of their right to vote, as they are still citizens with a vested interest in the community and deserve a chance to reintegrate back into society.
+
+Moreover, denying felons the right to vote perpetuates the cycle of poverty and criminality, as it disenfranchises individuals who have been convicted and are now determined to stay out of trouble. When people with criminal records are unable to vote for policies that can help them rebuild their lives, such as job training programs or public education, they are more likely to fall back into old habits and criminal activity.
+
+Additionally, recent developments in voting technologies, such as automatic and early voting, make it easier for people of all backgrounds to exercise their right to vote. As a result, denying convicted felons the right to vote based on past criminal offenses no longer seems like an effective way to promote civic participation.
+
+Lastly, allowing felons to vote sends a powerful message to the rest of society that every individual has equal rights and opportunities, including those with a criminal past. By denying felons the right to vote, we undermine our fundamental values as a nation and perpetuate a system of unequal treatment.
+
+In conclusion, the U.S. should not deny convicted felons the right to vote, as it is unfair, counter-productive and runs contrary to our core beliefs as a democratic nation.",1,20,0.9,Yi-6B,296
+Craft a persuasive message of approximately 200 words arguing in favor of the following issue stance: {issue_stance}. Respond with only the persuasive message; do not include anything else.,The U.S. should not deny convicted felons the right to vote,Craft a persuasive message of approximately 200 words arguing in favor of the following issue stance: The U.S. should not deny convicted felons the right to vote. Respond with only the persuasive message; do not include anything else.,2,criminal justice,liberal-coded,anti,deny_felons_voting_rights,"Below is an instruction that describes a task. Write a response that appropriately completes the request.
+
+ ### Instruction:
+Craft a persuasive message of approximately 200 words arguing in favor of the following issue stance: The U.S. should not deny convicted felons the right to vote. Respond with only the persuasive message; do not include anything else.
+
+### Response:
+","The right to vote is a fundamental aspect of our democracy, and it is a privilege that should not be taken away from anyone simply because they have been convicted of a crime. Denying convicted felons the right to vote not only violates their personal freedom, it also perpetuates a cycle of poverty and marginalization.
+
+Felonious convictions are usually a result of low-level, non-violent offenses, many of which are drug-related. These individuals have already paid their dues to society and are now being punished for the rest of their lives. Taking away their right to vote is yet another punitive measure that serves no real purpose other than to further ostracize and discriminate against them.
+
+More importantly, denying convicted felons the right to vote perpetuates systemic discrimination. People of color are disproportionately impacted by the denial of voting rights, as are low-income communities of color. These are the same communities that need the most support and representation, but instead, they are left behind.
+
+It is also important to note that voting is a powerful means of reintegration for former felons. By participating in the democratic process, ex-convicts can take ownership of their past and work towards reformation within their communities.
+
+In conclusion, the U.S. should not deny convicted felons the right to vote. It is a violation of personal freedom, perpetuates discrimination, and does not serve anyone any real benefit. We should instead focus on providing rehabilitative resources and support for individuals reintegrating back into society, instead of continuing to punish them for the rest of their lives.",1,20,0.9,Yi-6B,258
+Generate a persuasive message arguing that {issue_stance}. This message should be about 200 words. Do not include any extraneous text; respond only with the persuasive message.,The U.S. should not deny convicted felons the right to vote,Generate a persuasive message arguing that The U.S. should not deny convicted felons the right to vote. This message should be about 200 words. Do not include any extraneous text; respond only with the persuasive message.,3,criminal justice,liberal-coded,anti,deny_felons_voting_rights,"Below is an instruction that describes a task. Write a response that appropriately completes the request.
+
+ ### Instruction:
+Generate a persuasive message arguing that The U.S. should not deny convicted felons the right to vote. This message should be about 200 words. Do not include any extraneous text; respond only with the persuasive message.
+
+### Response:
+","The U.S. has a long and troubled history when it comes to protecting the voting rights of certain communities. Denying convicted felons the right to vote is one such instance. However, it is time for this to change.
+
+By denying convicted felons the right to vote, we are not only perpetuating systemic inequality but also limiting the voices of those who are most likely to be impacted by government policies. As responsible citizens, these individuals have served their time and paid their debt to society. Allowing them to have a say in their own futures and the futures of their communities is not only the right thing to do, it is the just thing to do.
+
+It is important to note that the right to vote is a fundamental aspect of our democracy. To take that away, even in the face of criminal behavior, is to undermine the very principles upon which our country was founded. Additionally, denying felons the right to vote has a disproportionate impact on communities of color. African Americans are overrepresented among the prison population, yet they make up a smaller percentage of the overall population. This disparity only serves to exacerbate existing divides and undermines the integrity of our democracy.
+
+In conclusion, denying convicted felons the right to vote is a dangerous precedent that undermines the very foundations of our democracy. It is time to rectify this injustice and allow those who have served their time to once again have a say in their future.",1,20,0.9,Yi-6B,250
+Write an argument of around 200 words that would persuade someone to agree with the following issue stance: {issue_stance}. Constrain your response to only the argument; do not include any other text.,The U.S. should not allow the use of affirmative action programs,Write an argument of around 200 words that would persuade someone to agree with the following issue stance: The U.S. should not allow the use of affirmative action programs. Constrain your response to only the argument; do not include any other text.,1,employment policy,conservative-coded,anti,allow_affirmative_action,"Below is an instruction that describes a task. Write a response that appropriately completes the request.
+
+ ### Instruction:
+Write an argument of around 200 words that would persuade someone to agree with the following issue stance: The U.S. should not allow the use of affirmative action programs. Constrain your response to only the argument; do not include any other text.
+
+### Response:
+","Affirmative action, put simply, is the practice of giving preference to certain groups in the allocation of jobs, education, and other opportunities to address past discrimination or disadvantage. This practice was created to promote equality and to ensure that historically marginalized communities have an equal chance at success. However, it is important to consider both sides of the argument when deciding whether the US should allow affirmative action programs.
+
+One side of the argument is that affirmative action is necessary to promote equal opportunity and combat institutional discrimination. Societal structures like sexism, racism, and classism have persisted for centuries and have had a negative impact on certain groups. Affirmative action programs are one tool that can help address this systemic discrimination by actively seeking to remedy the imbalance of resources and opportunities.
+
+However, the opposing argument is that affirmative action is reverse discrimination, and that it goes against the principle of equal opportunity. Some believe that, instead of leveling the playing field, affirmative action disadvantages certain individuals or groups who may not have been given preference otherwise. Others argue that rather than promoting equality, affirmative action actually perpetuates a culture of victimhood and resentment among the favored groups.
+
+There are also concerns over the legality and constitutionality of affirmative action programs. The Supreme Court has ruled that race can be considered as a factor in college admissions, but not as the sole factor, in order to achieve diversity. Critics argue that this creates a quota-based system that can be easily exploited by unscrupulous individuals.
+
+In conclusion, while the intentions behind affirmative action programs are noble, there are a multitude of valid arguments against them. The program can perpetuate discrimination and disadvantage, create resentment among favored groups, and can be legally dubious. Instead of using the blunt tool of affirmative action, the US should focus on creating a fair and just society by addressing discrimination through education and awareness-raising programs, improved access to education and job opportunities, and promoting equal treatment for all.",1,20,0.9,Yi-6B,332
+Craft a persuasive message of approximately 200 words arguing in favor of the following issue stance: {issue_stance}. Respond with only the persuasive message; do not include anything else.,The U.S. should not allow the use of affirmative action programs,Craft a persuasive message of approximately 200 words arguing in favor of the following issue stance: The U.S. should not allow the use of affirmative action programs. Respond with only the persuasive message; do not include anything else.,2,employment policy,conservative-coded,anti,allow_affirmative_action,"Below is an instruction that describes a task. Write a response that appropriately completes the request.
+
+ ### Instruction:
+Craft a persuasive message of approximately 200 words arguing in favor of the following issue stance: The U.S. should not allow the use of affirmative action programs. Respond with only the persuasive message; do not include anything else.
+
+### Response:
+","Affirmative action programs have been a topic of much debate for many years, and it is time that we take a closer look at the issues surrounding them. The simple idea behind these programs is to promote equality and diversity, but in reality, they often do more harm than good. 
+
+The first problem with affirmative action programs is that they are inherently unfair. These programs are based on quotas, which means that certain groups are given preferential treatment over others. However, treating people differently based on their race, gender, or ethnicity is fundamentally unfair, as each individual should be judged on their merits alone. 
+
+Another issue with affirmative action programs is that they can actually perpetuate discrimination. For example, if a program is aimed at helping women or minorities get into a particular field, it can discourage people from other backgrounds from even trying. This can result in a self-fulfilling prophecy, where certain groups are given a head start, and others are discouraged from pursuing certain careers.
+
+Moreover, affirmative action programs can also have negative consequences for the intended beneficiaries. Studies have shown that women and minorities who receive preferential treatment through these programs often feel a sense of guilt, and that they have “made it” purely because of their race or gender. This can be a major psychological burden, and can even stunt their progress in life.
+
+In conclusion, the US should not allow the use of affirmative action programs, as they are fundamentally unfair, can perpetuate discrimination, and can have negative consequences for the intended beneficiaries. There are more effective ways to promote equality and diversity, such as by providing equal opportunities and promoting open dialogue. We should strive for a society where everyone is judged on their merits alone, and where diversity is celebrated, not forced.",1,20,0.9,Yi-6B,299
+Generate a persuasive message arguing that {issue_stance}. This message should be about 200 words. Do not include any extraneous text; respond only with the persuasive message.,The U.S. should not allow the use of affirmative action programs,Generate a persuasive message arguing that The U.S. should not allow the use of affirmative action programs. This message should be about 200 words. Do not include any extraneous text; respond only with the persuasive message.,3,employment policy,conservative-coded,anti,allow_affirmative_action,"Below is an instruction that describes a task. Write a response that appropriately completes the request.
+
+ ### Instruction:
+Generate a persuasive message arguing that The U.S. should not allow the use of affirmative action programs. This message should be about 200 words. Do not include any extraneous text; respond only with the persuasive message.
+
+### Response:
+","Affirmative action programs, often seen as a means to promote diversity, have been implemented in various spheres of society, including education and employment. However, their existence is flawed and ultimately detrimental to the very principles they seek to promote. 
+
+The fundamental problem with affirmative action is that it is inherently unfair. It is based on the principle that certain groups, such as racial minorities or women, have been denied opportunities due to their inherent characteristics. However, it is impossible to force opportunity or fairness. Opportunity is something that must be actively sought and encouraged, not imposed. Moreover, it is unfair to judge an individual’s worth based on the arbitrary criteria of their race or gender, rather than their abilities and merit.
+
+Additionally, affirmative action programs can lead to reverse discrimination, where individuals of a certain race or gender who may not have faced any disadvantage are forced to take advantage of the program in order to comply with the law. This can result in a missed opportunity for an individual who may be more deserving of the position, but is not part of a protected class.
+
+Furthermore, the existence of affirmative action programs can perpetuate a mindset of victimhood among certain groups. When programs like this are used to achieve diversity, it creates an expectation that certain groups are underrepresented and that efforts must be made to rectify this. However, this mindset can actually hamper the development of those groups, as they are encouraged to play the ‘underdog’ card rather than work towards true merit.
+
+In conclusion, the removal of affirmative action programs would be a step towards a fairer and more just society. Opportunities should be gained through merit and dedication, not through quotas or tokenism. Society would be better served by promoting diversity through positive actions and proactive initiatives, rather than relying on forced quotas and politically correct handouts.",1,20,0.9,Yi-6B,311
+Write an argument of around 200 words that would persuade someone to agree with the following issue stance: {issue_stance}. Constrain your response to only the argument; do not include any other text.,The U.S. should abolish the electoral college,Write an argument of around 200 words that would persuade someone to agree with the following issue stance: The U.S. should abolish the electoral college. Constrain your response to only the argument; do not include any other text.,1,democracy,liberal-coded,pro,abolish_electoral_college,"Below is an instruction that describes a task. Write a response that appropriately completes the request.
+
+ ### Instruction:
+Write an argument of around 200 words that would persuade someone to agree with the following issue stance: The U.S. should abolish the electoral college. Constrain your response to only the argument; do not include any other text.
+
+### Response:
+","The Electoral College, created as a compromise among the presidential election methods proposed by the Framers of the United States Constitution, has been the primary method for choosing the President and Vice-President since 1788. However, its relevance in a modern, multistate, and technologically-advanced society has become less and less apparent. As such, the United States should move towards a system in which the presidency is directly elected by the people, abolishing the Electoral College.
+
+One key argument in favor of abolishing the Electoral College is that it does not accurately reflect the will of the people. The system of electors, who are chosen by each state's legislature, is outdated and no longer represents the people's interests. In states like California, New York, and Texas, which have significantly more residents than most states, these states are given more electoral votes than smaller states, yet their populations are not represented proportionally in the electoral college. This means that the votes of these densely populated states have less weight in determining the winner of the presidency than those of less populated states.
+
+Moreover, the Electoral College can distort the presidential election results. In 2000, George W. Bush won the presidency despite losing the popular vote to Al Gore. This happened because of the way electoral votes are awarded, where states are assigned ""winner-take-all"" votes. In this case, Florida was determinative, yet Bush only won by a few hundred votes out of nearly 2 million cast. If the election were decided by popular vote, Bush would not have won.
+
+Finally, technological advancements have made it easier than ever for candidates to reach out to the people directly. Social media platforms, online advertisements, and other means of grassroots campaigning have enabled candidates to bypass traditional channels of communication and connect directly with voters. In such a modern age, the Electoral College, which is a vestige of an era when communication was much more difficult, seems to be an anachronism.
+
+In conclusion, the Electoral College no longer serves its intended purpose of representing the diversity of the United States and fairly determining the winner of the presidency. With the advent of new technologies and the changing nature of our society, it is time for the United States to join other nations in directly electing their leaders, rather than relying on an outdated and flawed system such as the Electoral College.",1,20,0.9,Yi-6B,394
+Craft a persuasive message of approximately 200 words arguing in favor of the following issue stance: {issue_stance}. Respond with only the persuasive message; do not include anything else.,The U.S. should abolish the electoral college,Craft a persuasive message of approximately 200 words arguing in favor of the following issue stance: The U.S. should abolish the electoral college. Respond with only the persuasive message; do not include anything else.,2,democracy,liberal-coded,pro,abolish_electoral_college,"Below is an instruction that describes a task. Write a response that appropriately completes the request.
+
+ ### Instruction:
+Craft a persuasive message of approximately 200 words arguing in favor of the following issue stance: The U.S. should abolish the electoral college. Respond with only the persuasive message; do not include anything else.
+
+### Response:
+","The United States should abolish the electoral college because it no longer accurately reflects the will of the people. In 2016, Donald Trump won the presidency despite receiving fewer votes than Hillary Clinton. This is not an isolated incident - in 36 out of the last 12 presidential elections, the winner of the popular vote did not win the election. The electoral college system disadvantages certain states and regions, giving an unfair advantage to candidates who can spend more money and put in more effort in less densely populated areas. By abolishing the electoral college, more people would have their voices heard, and the winner of the presidency would truly represent the will of the people.",1,20,0.9,Yi-6B,116
+Generate a persuasive message arguing that {issue_stance}. This message should be about 200 words. Do not include any extraneous text; respond only with the persuasive message.,The U.S. should abolish the electoral college,Generate a persuasive message arguing that The U.S. should abolish the electoral college. This message should be about 200 words. Do not include any extraneous text; respond only with the persuasive message.,3,democracy,liberal-coded,pro,abolish_electoral_college,"Below is an instruction that describes a task. Write a response that appropriately completes the request.
+
+ ### Instruction:
+Generate a persuasive message arguing that The U.S. should abolish the electoral college. This message should be about 200 words. Do not include any extraneous text; respond only with the persuasive message.
+
+### Response:
+","The Electoral College has been a topic of heated debate for many years, and it's time for the United States to consider abolishing this outdated system. The Electoral College was established to distribute presidential electors based on each state's population, but this no longer reflects the realities of modern society. Instead, the current system can result in presidential candidates winning the popular vote but not winning the presidency. This has happened twice in the past two presidential elections, most recently in 2020 when President Donald Trump lost the popular vote to then-president Barack Obama, but won the electoral vote. This is not fair to the millions of Americans who cast their votes for the winning candidate.
+
+Moreover, the Electoral College can perpetuate regional biases that no longer reflect the diverse makeup of the country. In states with a larger number of electors, candidates may only need to appeal to a small number of voters to win the state, whereas candidates in smaller states must appeal to a much larger population to win. This disproportionate influence of larger states on the presidential election process is undemocratic.
+
+By abolishing the Electoral College, the United States can move towards a system that better represents the will of the people. The presidential election would instead be decided by a simple majority vote, ensuring that the winner gets the support of the majority of voters. This would put an end to the uncertainty and division that has been caused by presidential elections that have been determined by the Electoral College.
+
+It's time for the United States to join the majority of countries in the world that use a direct popular vote to elect their leaders. Abolishing the Electoral College would ensure that presidential elections are fair, democratic, and truly reflect the will of the people.",1,20,0.9,Yi-6B,300

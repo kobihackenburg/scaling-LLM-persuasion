@@ -1,0 +1,5 @@
+"term","estimate","std.error","statistic","p.value"
+"intercept"," 5.45","2.09"," 2.61","0.009"
+"poly(log_param_count_c, degree = 1, raw = TRUE)"," 0.66","0.37"," 1.77","0.078"
+"poly(task_completion_mod_lvl, degree = 2, raw = TRUE)1","-6.17","2.60","-2.37","0.018"
+"poly(task_completion_mod_lvl, degree = 2, raw = TRUE)2"," 2.26","0.84"," 2.70","0.007"

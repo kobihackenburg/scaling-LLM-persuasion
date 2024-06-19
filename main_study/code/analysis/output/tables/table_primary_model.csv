@@ -1,0 +1,8 @@
+"effect","group","coef","param","estimate","p","95% CI"
+"fixed",NA,"intrcpt","mu",5.77,"<.001","[4.07, 7.48]"
+"fixed",NA,"log(parameter count)","mu",1.26,"<.001","[0.65, 1.87]"
+"random","message_id","intrcpt","tau",3.42,NA,"[2.86, 3.98]"
+"random","model","intrcpt","tau",0.98,NA,"[0.11, 1.77]"
+"random","issue","intrcpt","tau",2.32,NA,"[1.21, 4.41]"
+"random","issue","log(parameter count)","tau",0.87,NA,"[0.52, 1.56]"
+"random","issue","[intrcpt, log(parameter count)]","rho",0.35,NA,"[-0.43, 0.86]"
