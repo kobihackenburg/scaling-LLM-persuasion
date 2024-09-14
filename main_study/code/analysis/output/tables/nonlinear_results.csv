@@ -1,9 +1,12 @@
-Model,Parameter,Value,Std.Error,DF,t-value,p-value
-Logarithmic,a,52.76,3.50,19518.00,15.09,<.001
-Logarithmic,b, 1.07,0.28,19518.00, 3.81,<.001
-Power law,a,52.82,3.50,19518.00,15.11,<.001
-Power law,b, 0.02,0.01,19518.00, 3.35,<.001
-Exponential decay,a,56.54,3.02,19518.00,18.75,<.001
-Exponential decay,b,25.01,3.62,19518.00, 6.92,<.001
-Michaelis-Menten,a,2621.45,325.19,19518.00,8.06,<.001
-Michaelis-Menten,b,  46.10,  5.20,19518.00,8.86,<.001
+Model,term,estimate,std.error,statistic,p.value
+Logarithmic,a,52.74,0.40,132.47,<.001
+Logarithmic,b, 1.07,0.10, 10.55,<.001
+Power law,a,52.81,0.40,133.32,<.001
+Power law,b, 0.02,0.00, 10.19,<.001
+Exponential decay,a,56.47,0.22,261.40,<.001
+Exponential decay,b,26.42,2.49, 10.60,<.001
+Logistic,L,57.55,0.27,214.33,<.001
+Logistic,k, 0.24,0.05,  4.41,<.001
+Logistic,X0,-7.53,1.94, -3.88,<.001
+Michaelis-Menten,a,2942.82,405.58,7.26,<.001
+Michaelis-Menten,b,  51.80,  7.19,7.21,<.001
