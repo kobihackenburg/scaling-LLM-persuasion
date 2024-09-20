@@ -1,6 +1,6 @@
 Model,AIC,BIC
-Logistic,187908.47,187939.99
-Logarithmic,187915.05,187938.68
-Power law,187916.95,187940.59
-Michaelis-Menten,187957.20,187980.83
-Exponential decay,188001.05,188024.69
+log-logistic,187905.62,187937.14
+logistic,187908.47,187939.99
+logarithmic,187915.05,187938.68
+power law,187916.95,187940.59
+exponential decay,188001.05,188024.69

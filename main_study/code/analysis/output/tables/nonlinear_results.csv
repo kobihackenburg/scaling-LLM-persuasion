@@ -1,12 +1,13 @@
 Model,term,estimate,std.error,statistic,p.value
-Logarithmic,a,52.74,0.40,132.47,<.001
-Logarithmic,b, 1.07,0.10, 10.55,<.001
-Power law,a,52.81,0.40,133.32,<.001
-Power law,b, 0.02,0.00, 10.19,<.001
-Exponential decay,a,56.47,0.22,261.40,<.001
-Exponential decay,b,26.42,2.49, 10.60,<.001
-Logistic,L,57.55,0.27,214.33,<.001
-Logistic,k, 0.24,0.05,  4.41,<.001
-Logistic,X0,-7.53,1.94, -3.88,<.001
-Michaelis-Menten,a,2942.82,405.58,7.26,<.001
-Michaelis-Menten,b,  51.80,  7.19,7.21,<.001
+logarithmic,a,52.74,0.40,132.47,<.001
+logarithmic,b, 1.07,0.10, 10.55,<.001
+power law,a,52.81,0.40,133.32,<.001
+power law,b, 0.02,0.00, 10.19,<.001
+exponential decay,a,56.47,0.22,261.40,<.001
+exponential decay,b,26.42,2.49, 10.60,<.001
+logistic,L,57.55,0.27,214.33,<.001
+logistic,k, 0.24,0.05,  4.41,<.001
+logistic,X0,-7.53,1.94, -3.88,<.001
+log-logistic,L,60.08,1.40,42.87,<.001
+log-logistic,k, 0.26,0.07, 3.71,<.001
+log-logistic,X0,-7.54,1.31,-5.74,<.001

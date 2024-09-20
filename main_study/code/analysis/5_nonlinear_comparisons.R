@@ -22,22 +22,16 @@ specifications <-
   tribble( 
     
     ~specification,      ~model_function,                           ~start_values,
-    "Logarithmic",       "a + b * log(parameters)",                 c(a_start = 1, b_start = 1),
-    "Power law",         "a * parameters^b",                        c(a_start = 50, b_start = 0.5),
-    "Exponential decay", "a * (1 - exp(-b * parameters))",          c(a_start = 1, b_start = 0.5),
-    "Logistic",          "L / (1 + exp(-k * (parameters - X0)))",   c(L_start = 50, k_start = 1, X0_start = 1), 
-    # "gam, mgcv package -> ",
-    # "gaussian process -> Aru has used a package",
-    "Michaelis-Menten",  "(a * parameters) / (1 + b * parameters)", c(a_start = 50, b_start = 50) # see here for mm: https://analyticsartist.wordpress.com/2015/03/08/advertising-diminishing-returns-saturation/
+    "logarithmic",       "a + b * log(parameters)",                 c(a_start = 1, b_start = 1),
+    "power law",         "a * parameters^b",                        c(a_start = 50, b_start = 0.5),
+    "exponential decay", "a * (1 - exp(-b * parameters))",          c(a_start = 1, b_start = 0.5),
+    "logistic",          "L / (1 + exp(-k * (parameters - X0)))",   c(L_start = 50, k_start = 1, X0_start = 1),
+    "log-logistic",      "L / (1 + exp(-k * (log_params - X0)))",   c(L_start = 50, k_start = 1, X0_start = 1)
                                                                                             
   )
 
 
 # Iterate and fit models ----
-newdata <- data.frame(parameters = seq(from = min(df_for_model2$parameters),
-                                       to = max(df_for_model2$parameters),
-                                       length.out = 100))
-
 list_out <- list()
 for (i in 1:nrow(specifications)) {
         
@@ -46,9 +40,27 @@ for (i in 1:nrow(specifications)) {
         id_start    <- specifications[[i,"start_values"]][[1]]
         
         model_formula <- as.formula(paste0("dv_response_mean ~ ", id_function))
+
+        # Adjust data and make newdata for predicting values
+        if(id_spec == "log-logistic") {
+          
+          df_for_model2 <- df_for_model2 %>% mutate(log_params = log(parameters))
+          
+          newdata <- 
+            data.frame(log_params = seq(from = min(df_for_model2$log_params),
+                                        to = max(df_for_model2$log_params),
+                                        length.out = 100))
+        } else {
+          
+          newdata <- 
+            data.frame(parameters = seq(from = min(df_for_model2$parameters),
+                                        to = max(df_for_model2$parameters),
+                                        length.out = 100))
+          
+        }
         
         # Fit model!
-        if(id_spec != "Logistic") {
+        if(str_detect(id_spec, "logistic", negate = T)) {
           
           # out_fit <-
           #   nlme(
@@ -99,6 +111,10 @@ for (i in 1:nrow(specifications)) {
           mutate(model = id_spec)
         
         names(df_pred)[1] <- "pred_value"  
+        
+        if(id_spec == "log-logistic") { 
+          df_pred <- df_pred %>% mutate(log_params = exp(log_params)) %>% rename(parameters = log_params) 
+        }
           
         list_out[[i]] <- 
           list("model_fit" = out_fit,
