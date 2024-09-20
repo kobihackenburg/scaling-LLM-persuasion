@@ -22,7 +22,7 @@ specifications <-
   tribble( 
     
     ~specification,      ~model_function,                           ~start_values,
-    "logarithmic",       "a + b * log(parameters)",                 c(a_start = 1, b_start = 1),
+    "log-linear",        "a + b * log(parameters)",                 c(a_start = 1, b_start = 1),
     "power law",         "a * parameters^b",                        c(a_start = 50, b_start = 0.5),
     "exponential decay", "a * (1 - exp(-b * parameters))",          c(a_start = 1, b_start = 0.5),
     "logistic",          "L / (1 + exp(-k * (parameters - X0)))",   c(L_start = 50, k_start = 1, X0_start = 1),
