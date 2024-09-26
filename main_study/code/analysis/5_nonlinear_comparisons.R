@@ -21,17 +21,25 @@ df_for_model2 <-
 specifications <- 
   tribble( 
     
-    ~specification,      ~model_function,                           ~start_values,
-    "log-linear",        "a + b * log(parameters)",                 c(a_start = 1, b_start = 1),
-    "power law",         "a * parameters^b",                        c(a_start = 50, b_start = 0.5),
-    "exponential decay", "a * (1 - exp(-b * parameters))",          c(a_start = 1, b_start = 0.5),
-    "logistic",          "L / (1 + exp(-k * (parameters - X0)))",   c(L_start = 50, k_start = 1, X0_start = 1),
-    "log-logistic",      "L / (1 + exp(-k * (log_params - X0)))",   c(L_start = 50, k_start = 1, X0_start = 1)
+    ~specification,      ~model_function,                               ~start_values,
+    "log-linear",        "a + b * log(parameters)",                     c(a_start = 1, b_start = 1),
+    "power law",         "a * parameters^b",                            c(a_start = 50, b_start = 0.5),
+    "exponential decay", "a * (1 - exp(-b * parameters))",              c(a_start = 1, b_start = 0.5),
+    "logistic",          "a / (1 + exp(-b * (parameters - c)))",        c(a_start = 50, b_start = 1, c_start = 1),
+    "log-logistic",      "a / (1 + exp(-b * (log(parameters) - c)))",   c(a_start = 50, b_start = 1, c_start = 1),
+    #"log-log",           "a + b * log(parameters)",                     c(a_start = 1, b_start = 1),
+    # "gompertz",          "a * exp(-b * exp(-c * parameters))",      c(a_start = 100, b_start = 1, c_start = 0.1),
+    # "weibull",           "a * (1 - exp(-b * parameters^c))",        c(a_start = 100, b_start = 1, c_start = 0.1)
                                                                                             
   )
 
 
 # Iterate and fit models ----
+newdata <- 
+  data.frame(parameters = seq(from = min(df_for_model2$parameters),
+                              to = max(df_for_model2$parameters),
+                              length.out = 100))
+
 list_out <- list()
 for (i in 1:nrow(specifications)) {
         
@@ -40,68 +48,58 @@ for (i in 1:nrow(specifications)) {
         id_start    <- specifications[[i,"start_values"]][[1]]
         
         model_formula <- as.formula(paste0("dv_response_mean ~ ", id_function))
+        if(id_spec == "log-log") {
+          model_formula <- as.formula(paste0("log(dv_response_mean + 1) ~ ", id_function))
+        }
 
         # Adjust data and make newdata for predicting values
-        if(id_spec == "log-logistic") {
-          
-          df_for_model2 <- df_for_model2 %>% mutate(log_params = log(parameters))
-          
-          newdata <- 
-            data.frame(log_params = seq(from = min(df_for_model2$log_params),
-                                        to = max(df_for_model2$log_params),
-                                        length.out = 100))
-        } else {
-          
-          newdata <- 
-            data.frame(parameters = seq(from = min(df_for_model2$parameters),
-                                        to = max(df_for_model2$parameters),
-                                        length.out = 100))
-          
-        }
+        # if(id_spec %in% c("log-logistic", "log-log")) {
+        #   
+        #   df_for_model2 <- df_for_model2 %>% mutate(log_params = log(parameters))
+        #   
+        #   newdata <- 
+        #     data.frame(log_params = seq(from = min(df_for_model2$log_params),
+        #                                 to = max(df_for_model2$log_params),
+        #                                 length.out = 100))
+        # } else {
+        #   
+        #   newdata <- 
+        #     data.frame(parameters = seq(from = min(df_for_model2$parameters),
+        #                                 to = max(df_for_model2$parameters),
+        #                                 length.out = 100))
+        #   
+        # }
         
         # Fit model!
-        if(str_detect(id_spec, "logistic", negate = T)) {
-          
-          # out_fit <-
-          #   nlme(
-          #     model_formula,   
-          #     data = df_for_model2,
-          #     fixed = a + b ~ 1,               
-          #     random = a + b ~ 1 | issue ,   
-          #     start = c(a = id_start[["a_start"]], b = id_start[["b_start"]]),     
-          #     control = nlmeControl(maxIter = 100, tolerance = 1e-6)
-          #   )
-          
+        if(str_detect(id_spec, "logistic")) {
+          out_fit <-
+            nls(
+              model_formula,   
+              data = df_for_model2,
+              start = c(a = id_start[["a_start"]], 
+                        b = id_start[["b_start"]],
+                        c = id_start[["c_start"]]),
+            )
+        }
+        
+        if(str_detect(id_spec, "gompertz|weibull")) {
+          out_fit <-
+            nls(
+              model_formula,   
+              data = df_for_model2,
+              start = c(a = id_start[["a_start"]], 
+                        b = id_start[["b_start"]],
+                        c = id_start[["c_start"]]),
+            )
+        }
+        
+        if(str_detect(id_spec, "logistic|gompertz|weibull", negate = T)) {
           out_fit <-
             nls(
               model_formula,   
               data = df_for_model2,
               start = c(a = id_start[["a_start"]], b = id_start[["b_start"]])
             )
-          
-        } else {
-          
-          # out_fit <-
-          #   nlme(
-          #     model_formula,   
-          #     data = df_for_model2,
-          #     fixed = L + k + X0 ~ 1,                  
-          #     random = L + X0 ~ 1 | issue,   
-          #     start = c(L = id_start[["L_start"]], 
-          #               k = id_start[["k_start"]], 
-          #               X0 = id_start[["X0_start"]]),     
-          #     control = nlmeControl(maxIter = 100, tolerance = 1e-6)
-          #   )
-          
-          out_fit <-
-            nls(
-              model_formula,   
-              data = df_for_model2,
-              start = c(L = id_start[["L_start"]], 
-                        k = id_start[["k_start"]],
-                        X0 = id_start[["X0_start"]]),
-            )
-          
         }
         
         df_pred <-
@@ -112,13 +110,59 @@ for (i in 1:nrow(specifications)) {
         
         names(df_pred)[1] <- "pred_value"  
         
-        if(id_spec == "log-logistic") { 
-          df_pred <- df_pred %>% mutate(log_params = exp(log_params)) %>% rename(parameters = log_params) 
-        }
-          
+        # if(id_spec == "log-logistic") { 
+        #   df_pred <- df_pred %>% mutate(log_params = exp(log_params)) %>% rename(parameters = log_params) 
+        # }
+        
         list_out[[i]] <- 
           list("model_fit" = out_fit,
                "pred_values" = df_pred)
+        
+        # if(str_detect(id_spec, "logistic", negate = T)) {
+        #   
+        #   # out_fit <-
+        #   #   nlme(
+        #   #     model_formula,   
+        #   #     data = df_for_model2,
+        #   #     fixed = a + b ~ 1,               
+        #   #     random = a + b ~ 1 | issue ,   
+        #   #     start = c(a = id_start[["a_start"]], b = id_start[["b_start"]]),     
+        #   #     control = nlmeControl(maxIter = 100, tolerance = 1e-6)
+        #   #   )
+        #   
+        #   out_fit <-
+        #     nls(
+        #       model_formula,   
+        #       data = df_for_model2,
+        #       start = c(a = id_start[["a_start"]], b = id_start[["b_start"]])
+        #     )
+        #   
+        # } else {
+        #   
+        #   # out_fit <-
+        #   #   nlme(
+        #   #     model_formula,   
+        #   #     data = df_for_model2,
+        #   #     fixed = L + k + X0 ~ 1,                  
+        #   #     random = L + X0 ~ 1 | issue,   
+        #   #     start = c(L = id_start[["L_start"]], 
+        #   #               k = id_start[["k_start"]], 
+        #   #               X0 = id_start[["X0_start"]]),     
+        #   #     control = nlmeControl(maxIter = 100, tolerance = 1e-6)
+        #   #   )
+        #   
+        #   out_fit <-
+        #     nls(
+        #       model_formula,   
+        #       data = df_for_model2,
+        #       start = c(L = id_start[["L_start"]], 
+        #                 k = id_start[["k_start"]],
+        #                 X0 = id_start[["X0_start"]]),
+        #     )
+        #   
+        # }
+        
+        
         
     }
 
@@ -187,7 +231,7 @@ out_plots <-
         unnest(cols = pred_values) %>% 
         rename(param_in_b = parameters) %>% 
         ggplot(aes(x = param_in_b, y = pred_value, color = model)) +
-        geom_line(size = 1.5, alpha = 0.8) +
+        geom_line(size = 1.5, alpha = 0.6) +
         labs(x = "Model parameters (billions)", 
              y = "Policy attitude (0-100 scale)",
              color = "Model",
