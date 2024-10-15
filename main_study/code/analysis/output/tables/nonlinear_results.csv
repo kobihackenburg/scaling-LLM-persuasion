@@ -3,8 +3,8 @@ log-linear,a,52.74,0.40,132.47,<.001
 log-linear,b, 1.07,0.10, 10.55,<.001
 power law,a,52.81,0.40,133.32,<.001
 power law,b, 0.02,0.00, 10.19,<.001
-exponential decay,a,56.47,0.22,261.40,<.001
-exponential decay,b,26.42,2.49, 10.60,<.001
+saturating growth,a,56.47,0.22,261.40,<.001
+saturating growth,b,26.42,2.49, 10.60,<.001
 logistic,a,57.55,0.27,214.33,<.001
 logistic,b, 0.24,0.05,  4.41,<.001
 logistic,c,-7.53,1.94, -3.88,<.001

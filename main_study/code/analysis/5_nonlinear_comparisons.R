@@ -5,6 +5,7 @@ library(broom)
 library(estimatr)
 library(ggrepel)
 library(cowplot)
+library(patchwork)
 library(nlme)
 set.seed(42)
 
@@ -17,6 +18,7 @@ df_for_model2 <-
   filter(condition == "AI") %>% 
   mutate(parameters = ifelse(is.na(parameters), 300, parameters))
 
+
 # Specifications ----
 specifications <- 
   tribble( 
@@ -24,9 +26,10 @@ specifications <-
     ~specification,      ~model_function,                               ~start_values,
     "log-linear",        "a + b * log(parameters)",                     c(a_start = 1, b_start = 1),
     "power law",         "a * parameters^b",                            c(a_start = 50, b_start = 0.5),
-    "exponential decay", "a * (1 - exp(-b * parameters))",              c(a_start = 1, b_start = 0.5),
+    "saturating growth", "a * (1 - exp(-b * parameters))",              c(a_start = 50, b_start = 1),
     "logistic",          "a / (1 + exp(-b * (parameters - c)))",        c(a_start = 50, b_start = 1, c_start = 1),
     "log-logistic",      "a / (1 + exp(-b * (log(parameters) - c)))",   c(a_start = 50, b_start = 1, c_start = 1),
+    #"quadratic",         "a + b * parameters + c * parameters^2",       c(a_start = 50, b_start = 1, c_start = 1),
     #"log-log",           "a + b * log(parameters)",                     c(a_start = 1, b_start = 1),
     # "gompertz",          "a * exp(-b * exp(-c * parameters))",      c(a_start = 100, b_start = 1, c_start = 0.1),
     # "weibull",           "a * (1 - exp(-b * parameters^c))",        c(a_start = 100, b_start = 1, c_start = 0.1)
@@ -39,6 +42,8 @@ newdata <-
   data.frame(parameters = seq(from = min(df_for_model2$parameters),
                               to = max(df_for_model2$parameters),
                               length.out = 100))
+
+list_models <- df_for_model2 %>% pull(model) %>% unique # For CV
 
 list_out <- list()
 for (i in 1:nrow(specifications)) {
@@ -82,18 +87,7 @@ for (i in 1:nrow(specifications)) {
             )
         }
         
-        if(str_detect(id_spec, "gompertz|weibull")) {
-          out_fit <-
-            nls(
-              model_formula,   
-              data = df_for_model2,
-              start = c(a = id_start[["a_start"]], 
-                        b = id_start[["b_start"]],
-                        c = id_start[["c_start"]]),
-            )
-        }
-        
-        if(str_detect(id_spec, "logistic|gompertz|weibull", negate = T)) {
+        if(str_detect(id_spec, "logistic", negate = T)) {
           out_fit <-
             nls(
               model_formula,   
@@ -102,6 +96,7 @@ for (i in 1:nrow(specifications)) {
             )
         }
         
+        # > Predicted values ----
         df_pred <-
           predict(out_fit, level = 0, newdata = newdata) %>% 
           as.data.frame() %>% 
@@ -110,13 +105,53 @@ for (i in 1:nrow(specifications)) {
         
         names(df_pred)[1] <- "pred_value"  
         
-        # if(id_spec == "log-logistic") { 
-        #   df_pred <- df_pred %>% mutate(log_params = exp(log_params)) %>% rename(parameters = log_params) 
-        # }
         
+        # > Cross-validation (leave-one-model-out) ----
+        
+        cv_error <-
+          map_dbl(list_models,
+                  function(holdout_model) {
+                    
+                    #holdout_model <- list_models[24] # COMMENT THIS OUT!
+            
+                    df_train <- df_for_model2 %>% filter(!(model %in% holdout_model))
+                    df_test  <- df_for_model2 %>% filter(model %in% holdout_model)
+                    
+                    if(str_detect(id_spec, "logistic")) {
+                      out_train <-
+                        nls(
+                          model_formula,   
+                          data = df_train,
+                          start = c(a = id_start[["a_start"]], 
+                                    b = id_start[["b_start"]],
+                                    c = id_start[["c_start"]]),
+                        )
+                    }
+                    
+                    if(str_detect(id_spec, "logistic", negate = T)) {
+                      out_train <-
+                        nls(
+                          model_formula,   
+                          data = df_train,
+                          start = c(a = id_start[["a_start"]], b = id_start[["b_start"]])
+                        )
+                    }
+                    
+                    # Predict on heldout data
+                    out_train_pred <- predict(out_train, level = 0, newdata = df_test)
+                    
+                    # Compute prediction error for model
+                    pred_error <- abs(mean(df_test$dv_response_mean) - mean(out_train_pred))
+                    
+                    pred_error # Return
+              
+            }) %>% mean() # Compute mean prediction error across model folds
+        
+        # Return
         list_out[[i]] <- 
           list("model_fit" = out_fit,
-               "pred_values" = df_pred)
+               "pred_values" = df_pred,
+               "cv_error" = cv_error)
         
         # if(str_detect(id_spec, "logistic", negate = T)) {
         #   
@@ -168,8 +203,9 @@ for (i in 1:nrow(specifications)) {
 
 specifications$model_fit   <- map(list_out, ~.x$model_fit)
 specifications$pred_values <- map(list_out, ~.x$pred_values)
+specifications$cv_error    <- map_dbl(list_out, ~.x$cv_error)
 
-# Get AIC/BIC ----
+# Write AIC/BIC/CV-error ----
 out_aic_bic <-
   map(1:nrow(specifications),
       function(.x) {
@@ -182,12 +218,13 @@ out_aic_bic <-
 # Write table to file
 data.frame("Model" = specifications$specification,
            "AIC" = map_dbl(out_aic_bic, ~.x$AIC),
-           "BIC" = map_dbl(out_aic_bic, ~.x$BIC)) %>%
+           "BIC" = map_dbl(out_aic_bic, ~.x$BIC),
+           "CV_error" = specifications$cv_error) %>%
   arrange(AIC) %>%
   mutate_if(is.numeric, ~format(round(., 2), nsmall = 2)) %>%
   write_csv("output/tables/nonlinear_comparisons.csv")
 
-
+# Write coefficient estimates ----
 map(1:nrow(specifications),
     function(.x) {
 
@@ -249,7 +286,8 @@ out_plots <-
                         inherit.aes = F) +
         theme(legend.position = c(0.85, 0.5),
               legend.box.background = element_rect(),
-              plot.title = element_text(hjust = 0.5))
+              plot.title = element_text(hjust = 0.5),
+              panel.grid.minor = element_blank())
       
       if(.x == "Log scale") {
         g <- 
@@ -280,6 +318,129 @@ g <- plot_grid(out_plots[[2]], out_plots[[1]], labels = "AUTO")
 
 ggsave(plot = g, filename = "output/plots/nonlinear_comparisons.pdf",
        height = 7, width = 14)
+
+
+
+# Extrapolation exercise ----
+
+x <- specifications %>% filter(specification == "log-logistic") %>% pull(model_fit) %>% .[[1]]
+
+extrapolate_to_values <- c(3000, 30000) # In billions
+
+plot_extrapolation <-
+  map(extrapolate_to_values,
+    function(extrap_value) {
+      
+      newdata2 <-
+        data.frame(parameters = c(
+          seq(from = min(df_for_model2$parameters),
+              to = max(df_for_model2$parameters),
+              length.out = 100),
+          seq(from = max(df_for_model2$parameters) + 1,
+              to = extrap_value,
+              length.out = 500)))
+      
+      df_pred2 <-
+        predict(x, level = 0, newdata = newdata2) %>% 
+        as.data.frame() %>% 
+        bind_cols(newdata2) %>% 
+        set_names("pred_value", "param_in_b")
+      
+      df_pred2 <-
+        df_pred2 %>% 
+        mutate(control_mean = control_mean) %>% 
+        mutate(implied_tx = pred_value - control_mean)
+      
+      max_tx <- df_pred2 %>% slice_max(param_in_b)
+      obs_tx <- df_pred2 %>% filter(param_in_b == 300)
+      
+      obs_color <- "blue"
+      max_color <- "red"
+      hum_color <- "green4"
+      
+      human_mean <-
+        df_for_model %>% 
+        filter(condition == "human") %>% 
+        pull(dv_response_mean) %>% 
+        mean()
+      
+      g2 <-
+        df_pred2 %>% 
+        ggplot(aes(x = param_in_b/1000, y = pred_value)) +
+        theme_bw() +
+        geom_line() +
+        geom_point(data = model_mean_y, 
+                   aes(x = param_in_b/1000, y = pred_value), 
+                   inherit.aes = F,
+                   alpha = 0.3,
+                   size = 3) +
+        labs(x = "Parameters (in Trillions)",
+             y = "Policy attitude (0-100 scale)",
+             title = "Extrapolation of log-logistic function") +
+        geom_text_repel(data = model_mean_y %>% mutate(model  = ifelse(param_in_b < 300, NA, model)), 
+                        aes(x = param_in_b/1000, y = pred_value, label = model), 
+                        inherit.aes = F) +
+        scale_y_continuous(breaks = 46:60) +
+        theme(panel.grid.minor.y = element_blank(),
+              plot.title = element_text(hjust = 0.5)) +
+        
+        # Annotate implied treatment effects
+        
+        # Full extrapolation:
+        annotate("segment", 
+                 x    = max_tx$param_in_b/1000, 
+                 xend = max_tx$param_in_b/1000, 
+                 y    = max_tx$control_mean + 0.1, 
+                 yend = max_tx$pred_value - 0.1,
+                 arrow = arrow(ends = "both", type = "closed", length = unit(0.02, "npc")),
+                 color = max_color) +
+        annotate("text",
+                 x = max_tx$param_in_b/1000*0.99,
+                 y = 55,
+                 hjust = 1,
+                 label = paste0("Parameters: ", max_tx$param_in_b/1000, "T (", max_tx$param_in_b, "B)\n",
+                                "Implied treatment effect: ", max_tx$implied_tx %>% round(2), "pp"),
+                 color = max_color) +
+        
+        # Empirically observed max
+        annotate("segment", 
+                 x    = 300/1000, 
+                 xend = 300/1000, 
+                 y    = obs_tx$control_mean + 0.1, 
+                 yend = obs_tx$pred_value - 0.1,
+                 arrow = arrow(ends = "both", type = "closed", length = unit(0.02, "npc")),
+                 color = obs_color) +
+        annotate("text",
+                 x = obs_tx$param_in_b/1000*1.05,
+                 y = 52,
+                 hjust = 0,
+                 label = paste0("Parameters: 0.3T (300B)\nImplied treatment effect: ", 
+                                obs_tx$implied_tx %>% round(2), "pp"),
+                 color = obs_color) +
+        
+        # Add human mean
+        geom_hline(yintercept = human_mean, linewidth = 1, alpha = 0.5,
+                   color = hum_color) +
+        annotate("text",
+                 x = (extrap_value/1000)/2,
+                 y = human_mean + 0.25,
+                 hjust = 0.5,
+                 label = "Mean attitude in human-message group",
+                 color = hum_color) +
+        
+        # Control group mean
+        geom_hline(yintercept = control_mean, linewidth = 1, alpha = 0.5) +
+        annotate("text", 
+                 label = "Mean attitude in control group",
+                 x = (extrap_value/1000)/2, 
+                 y = control_mean - 0.25,
+                 hjust = 0.5)
+      
+      ggsave(plot = g2, 
+             filename = paste0("output/plots/extrapolation_", extrap_value/1000, "T.pdf"),
+             height = 7, width = 9)
+      
+    })
 
 
 

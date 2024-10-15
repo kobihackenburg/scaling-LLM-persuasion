@@ -1,6 +1,6 @@
-Model,AIC,BIC
-log-logistic,187905.62,187937.14
-logistic,187908.47,187939.99
-log-linear,187915.05,187938.68
-power law,187916.95,187940.59
-exponential decay,188001.05,188024.69
+Model,AIC,BIC,CV_error
+log-logistic,187905.62,187937.14,1.40
+logistic,187908.47,187939.99,1.39
+log-linear,187915.05,187938.68,1.47
+power law,187916.95,187940.59,1.51
+saturating growth,188001.05,188024.69,3.17
