@@ -323,7 +323,7 @@ ggsave(plot = g, filename = "output/plots/nonlinear_comparisons.pdf",
 
 # Extrapolation exercise ----
 
-extrapolate_specs <- c("log-logistic", "power law", "log-linear")
+extrapolate_specs <- c("log-logistic", "power law", "log-linear", "logistic", "saturating growth")
 extrapolate_to_values <- c(3000, 30000) # In billions
 
 df_combos <- expand_grid(extrapolate_specs, extrapolate_to_values)
