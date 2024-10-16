@@ -386,7 +386,7 @@ plot_extrapolation <-
         geom_text_repel(data = model_mean_y %>% mutate(model  = ifelse(param_in_b < 300, NA, model)), 
                         aes(x = param_in_b/1000, y = pred_value, label = model), 
                         inherit.aes = F) +
-        scale_y_continuous(breaks = 46:60) +
+        scale_y_continuous(breaks = 46:64) +
         theme(panel.grid.minor.y = element_blank(),
               plot.title = element_text(hjust = 0.5)) +
         
