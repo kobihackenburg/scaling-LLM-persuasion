@@ -323,13 +323,19 @@ ggsave(plot = g, filename = "output/plots/nonlinear_comparisons.pdf",
 
 # Extrapolation exercise ----
 
-x <- specifications %>% filter(specification == "log-logistic") %>% pull(model_fit) %>% .[[1]]
-
+extrapolate_specs <- c("log-logistic", "power law", "log-linear")
 extrapolate_to_values <- c(3000, 30000) # In billions
 
+df_combos <- expand_grid(extrapolate_specs, extrapolate_to_values)
+
 plot_extrapolation <-
-  map(extrapolate_to_values,
-    function(extrap_value) {
+  map(1:nrow(df_combos),
+    function(i) {
+      
+      extrap_spec  <- df_combos[[i,"extrapolate_specs"]]
+      extrap_value <- df_combos[[i,"extrapolate_to_values"]]
+      
+      x <- specifications %>% filter(specification == extrap_spec) %>% pull(model_fit) %>% .[[1]]
       
       newdata2 <-
         data.frame(parameters = c(
@@ -376,7 +382,7 @@ plot_extrapolation <-
                    size = 3) +
         labs(x = "Parameters (in Trillions)",
              y = "Policy attitude (0-100 scale)",
-             title = "Extrapolation of log-logistic function") +
+             title = paste0("Extrapolation of ", extrap_spec, " function")) +
         geom_text_repel(data = model_mean_y %>% mutate(model  = ifelse(param_in_b < 300, NA, model)), 
                         aes(x = param_in_b/1000, y = pred_value, label = model), 
                         inherit.aes = F) +
@@ -437,7 +443,9 @@ plot_extrapolation <-
                  hjust = 0.5)
       
       ggsave(plot = g2, 
-             filename = paste0("output/plots/extrapolation_", extrap_value/1000, "T.pdf"),
+             filename = paste0("output/plots/extrapolation_", 
+                               str_replace_all(extrap_spec, c("-" = "_", " " = "_")), "_", 
+                               extrap_value/1000, "T.pdf"),
              height = 7, width = 9)
       
     })
