@@ -41,7 +41,7 @@ specifications <-
 newdata <- 
   data.frame(parameters = seq(from = min(df_for_model2$parameters),
                               to = max(df_for_model2$parameters),
-                              length.out = 100))
+                              length.out = 5000))
 
 list_models <- df_for_model2 %>% pull(model) %>% unique # For CV
 
@@ -204,6 +204,24 @@ for (i in 1:nrow(specifications)) {
 specifications$model_fit   <- map(list_out, ~.x$model_fit)
 specifications$pred_values <- map(list_out, ~.x$pred_values)
 specifications$cv_error    <- map_dbl(list_out, ~.x$cv_error)
+
+# Testing logistic function
+# logistic_coeffs <- specifications$model_fit[[4]] %>% tidy()
+# a <- logistic_coeffs[[1, 2]]
+# b <- logistic_coeffs[[2, 2]]
+# c <- logistic_coeffs[[3, 2]]
+# fun_logistic_equation <- function(a, b, c, x) { a / (1 + exp(-b * (x - c))) }
+# 
+# #x <- c(seq(0.0001, 1, length.out = 1000), seq(1.1, 300, by = 0.1))
+# x <- seq(0.1, 300, length.out = 2000)
+# 
+# df_test <- data.frame(x = x) %>%
+#   mutate(y = fun_logistic_equation(a = a, b = b, c = c, x = x))
+# 
+# df_test %>%
+#   ggplot(aes(x = x, y = y)) +
+#   geom_line() +
+#   scale_x_log10()
 
 # Write AIC/BIC/CV-error ----
 out_aic_bic <-
