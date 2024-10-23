@@ -1,0 +1,6 @@
+Model,AIC,BIC,CV_error
+log-logistic,187907.52,187939.04,1.43
+logistic,187908.47,187939.99,1.39
+log-linear,187933.34,187956.98,1.72
+power law,187935.69,187959.33,1.75
+saturating growth,188001.05,188024.69,3.17
