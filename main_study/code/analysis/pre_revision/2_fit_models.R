@@ -224,15 +224,7 @@ specifications <-
   "primary_adjust2", paste0("~1+poly(log_param_count_c, degree=1, raw=TRUE)", 
                             "+poly(task_completion_mod_lvl, degree=2, raw=TRUE)"),       list("~1+poly(log_param_count_c, degree=1, raw=TRUE)|issue",
                                                                                               "~1|message_id",
-                                                                                              "~1|model"),
-  "primary_adjust3", paste0("~1+poly(log_param_count_c, degree=1, raw=TRUE)", 
-                            "+poly(type_token_ratio_mod_lvl, degree=2, raw=TRUE)"),      list("~1+poly(log_param_count_c, degree=1, raw=TRUE)|issue",
-                                                                                              "~1|message_id",
-                                                                                              "~1|model"),
-  "drop_pythia70m", "~1+poly(log_param_count_c, degree=1, raw=TRUE)",                    list("~1+poly(log_param_count_c, degree=1, raw=TRUE)|issue",
-                                                                                              "~1|message_id",
                                                                                               "~1|model")
-  
 ) %>% 
   bind_rows(spec_mediators)
 
@@ -267,13 +259,6 @@ for (i in 1:nrow(df_combos)) {
   drop_humans       <- df_estimates$model != "human"
   df_estimates_temp <- df_estimates[drop_humans,]
   vcov_block_temp   <- vcov_block[drop_humans, drop_humans]
-  
-  # If spec is drop pythia-70m then also do that
-  if(id_spec == "drop_pythia70m") {
-    drop_pythia       <- df_estimates_temp$model != "Pythia-70M"
-    df_estimates_temp <- df_estimates_temp[drop_pythia,]
-    vcov_block_temp   <- vcov_block_temp[drop_pythia, drop_pythia]
-  }
   
   stopifnot(identical(vcov_block_temp %>% diag %>% sqrt %>% round(8), df_estimates_temp$std.error %>% round(8))) # Check SEs match
   stopifnot(isSymmetric.matrix(vcov_block_temp)) # Check symmetric

@@ -16,7 +16,8 @@ options(scipen = 999)
 #fonts()
 
 run_get_cis <- FALSE # Set TRUE if you wanna run the get CIs for primary model (takes ~2h)
-setwd("/Users/kobihackenburg/Documents/Papers/scaling laws + persuasion/project github/scaling-laws-pp/main_study/data/refactor")
+#setwd("/Users/kobihackenburg/Documents/Papers/scaling laws + persuasion/project github/scaling-laws-pp/main_study/data/refactor")
+
 # Read in data
 df_combos         <- readRDS("output/processed_data/metafor_fits.rds")
 df_estimates      <- readRDS("output/processed_data/df_estimates.rds")
@@ -684,8 +685,8 @@ write.csv(robust_frontier_table, "output/tables/table_robust_frontier.csv", row.
 
 df_combos$specification %>% unique
 
-list_models <- c("cubic", "quadratic", "family_fixed_fx",
-                 "mediators_joint", "primary_adjust2", "task_comp2_alone")
+list_models <- c("cubic", "quadratic", "family_fixed_fx", "drop_pythia70m",
+                 "mediators_joint", "primary_adjust2", "task_comp2_alone", "primary_adjust3")
 
 map(list_models,
     function(.x) {

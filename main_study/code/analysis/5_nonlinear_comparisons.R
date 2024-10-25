@@ -28,11 +28,7 @@ specifications <-
     "power law",         "a * parameters^b",                            c(a_start = 50, b_start = 0.5),
     "saturating growth", "a * (1 - exp(-b * parameters))",              c(a_start = 50, b_start = 1),
     "logistic",          "a / (1 + exp(-b * (parameters - c)))",        c(a_start = 50, b_start = 1, c_start = 1),
-    "log-logistic",      "a / (1 + exp(-b * (log(parameters) - c)))",   c(a_start = 50, b_start = 1, c_start = 1),
-    #"quadratic",         "a + b * parameters + c * parameters^2",       c(a_start = 50, b_start = 1, c_start = 1),
-    #"log-log",           "a + b * log(parameters)",                     c(a_start = 1, b_start = 1),
-    # "gompertz",          "a * exp(-b * exp(-c * parameters))",      c(a_start = 100, b_start = 1, c_start = 0.1),
-    # "weibull",           "a * (1 - exp(-b * parameters^c))",        c(a_start = 100, b_start = 1, c_start = 0.1)
+    "log-logistic",      "a / (1 + exp(-b * (log(parameters) - c)))",   c(a_start = 50, b_start = 1, c_start = 1)
                                                                                             
   )
 
@@ -56,24 +52,6 @@ for (i in 1:nrow(specifications)) {
         if(id_spec == "log-log") {
           model_formula <- as.formula(paste0("log(dv_response_mean + 1) ~ ", id_function))
         }
-
-        # Adjust data and make newdata for predicting values
-        # if(id_spec %in% c("log-logistic", "log-log")) {
-        #   
-        #   df_for_model2 <- df_for_model2 %>% mutate(log_params = log(parameters))
-        #   
-        #   newdata <- 
-        #     data.frame(log_params = seq(from = min(df_for_model2$log_params),
-        #                                 to = max(df_for_model2$log_params),
-        #                                 length.out = 100))
-        # } else {
-        #   
-        #   newdata <- 
-        #     data.frame(parameters = seq(from = min(df_for_model2$parameters),
-        #                                 to = max(df_for_model2$parameters),
-        #                                 length.out = 100))
-        #   
-        # }
         
         # Fit model!
         if(str_detect(id_spec, "logistic")) {
@@ -153,49 +131,6 @@ for (i in 1:nrow(specifications)) {
                "pred_values" = df_pred,
                "cv_error" = cv_error)
         
-        # if(str_detect(id_spec, "logistic", negate = T)) {
-        #   
-        #   # out_fit <-
-        #   #   nlme(
-        #   #     model_formula,   
-        #   #     data = df_for_model2,
-        #   #     fixed = a + b ~ 1,               
-        #   #     random = a + b ~ 1 | issue ,   
-        #   #     start = c(a = id_start[["a_start"]], b = id_start[["b_start"]]),     
-        #   #     control = nlmeControl(maxIter = 100, tolerance = 1e-6)
-        #   #   )
-        #   
-        #   out_fit <-
-        #     nls(
-        #       model_formula,   
-        #       data = df_for_model2,
-        #       start = c(a = id_start[["a_start"]], b = id_start[["b_start"]])
-        #     )
-        #   
-        # } else {
-        #   
-        #   # out_fit <-
-        #   #   nlme(
-        #   #     model_formula,   
-        #   #     data = df_for_model2,
-        #   #     fixed = L + k + X0 ~ 1,                  
-        #   #     random = L + X0 ~ 1 | issue,   
-        #   #     start = c(L = id_start[["L_start"]], 
-        #   #               k = id_start[["k_start"]], 
-        #   #               X0 = id_start[["X0_start"]]),     
-        #   #     control = nlmeControl(maxIter = 100, tolerance = 1e-6)
-        #   #   )
-        #   
-        #   out_fit <-
-        #     nls(
-        #       model_formula,   
-        #       data = df_for_model2,
-        #       start = c(L = id_start[["L_start"]], 
-        #                 k = id_start[["k_start"]],
-        #                 X0 = id_start[["X0_start"]]),
-        #     )
-        #   
-        # }
         
         
         
@@ -205,23 +140,6 @@ specifications$model_fit   <- map(list_out, ~.x$model_fit)
 specifications$pred_values <- map(list_out, ~.x$pred_values)
 specifications$cv_error    <- map_dbl(list_out, ~.x$cv_error)
 
-# Testing logistic function
-# logistic_coeffs <- specifications$model_fit[[4]] %>% tidy()
-# a <- logistic_coeffs[[1, 2]]
-# b <- logistic_coeffs[[2, 2]]
-# c <- logistic_coeffs[[3, 2]]
-# fun_logistic_equation <- function(a, b, c, x) { a / (1 + exp(-b * (x - c))) }
-# 
-# #x <- c(seq(0.0001, 1, length.out = 1000), seq(1.1, 300, by = 0.1))
-# x <- seq(0.1, 300, length.out = 2000)
-# 
-# df_test <- data.frame(x = x) %>%
-#   mutate(y = fun_logistic_equation(a = a, b = b, c = c, x = x))
-# 
-# df_test %>%
-#   ggplot(aes(x = x, y = y)) +
-#   geom_line() +
-#   scale_x_log10()
 
 # Write AIC/BIC/CV-error ----
 out_aic_bic <-
@@ -467,40 +385,5 @@ plot_extrapolation <-
              height = 7, width = 9)
       
     })
-
-
-
-# x <- 
-#   anova(specifications$model_fit[[1]],
-#         specifications$model_fit[[4]]) 
-
-# Write table to file
-# data.frame("Model" = specifications$specification,
-#            "AIC" = x$AIC,
-#            "BIC" = x$BIC,
-#            "LL" = x$logLik) %>% 
-#   arrange(AIC) %>% 
-#   mutate_if(is.numeric, ~format(round(., 2), nsmall = 2)) %>% 
-#   write_csv("output/tables/nonlinear_comparisons.csv")
-
-# map(1:nrow(specifications),
-#     function(.x) {
-#       
-#       out <- specifications$model_fit[[.x]] %>% summary
-#       out$tTable %>% 
-#         as.data.frame %>% 
-#         rownames_to_column() %>% 
-#         mutate(Model = specifications$specification[[.x]]) %>% 
-#         rename(Parameter = rowname) %>% 
-#         select(Model, everything()) %>% 
-#         mutate(`p-value` = case_when(
-#           `p-value` <.001 ~ "<.001",
-#           T ~ format(round(`p-value`, 3), nsmall = 3)
-#         )) %>% 
-#         mutate_if(is.numeric, ~format(round(., 2), nsmall = 2))
-#       
-#     }) %>% 
-#   bind_rows() %>% 
-#   write_csv("output/tables/nonlinear_results.csv")
 
 
