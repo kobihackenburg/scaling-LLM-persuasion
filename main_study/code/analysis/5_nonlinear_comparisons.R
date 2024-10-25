@@ -194,66 +194,104 @@ control_mean <-
   pull(dv_response_mean) %>% 
   mean()
 
-# Plot predicted values and overlay raw means
+# Define custom colors, line types, and line sizes
+custom_colors <- c("log-linear" = "#304f5f", 
+                   "power law" = "#568F84", 
+                   "saturating growth" = "#A55087", 
+                   "logistic" = "#dcad04", 
+                   "log-logistic" = "#cc3224")
+custom_linetypes <- c("log-linear" = "solid",
+                      "power law" = "solid",
+                      "saturating growth" = "solid",
+                      "logistic" = "solid",
+                      "log-logistic" = "solid")
+custom_sizes <- c("log-linear" = 1, 
+                  "power law" = 1, 
+                  "saturating growth" = 1, 
+                  "logistic" = .75, 
+                  "log-logistic" = 2)
+
+# Define the order of models
+model_order <- c("power law", "saturating growth", "logistic", "log-linear", "log-logistic")
+
+# Update the plotting function
 out_plots <-
   map(c("Linear scale", "Log scale"),
       function(.x) {
-      
-      g <-
-        specifications %>% 
-        unnest(cols = pred_values) %>% 
-        rename(param_in_b = parameters) %>% 
-        ggplot(aes(x = param_in_b, y = pred_value, color = model)) +
-        geom_line(size = 1.5, alpha = 0.6) +
-        labs(x = "Model parameters (billions)", 
-             y = "Policy attitude (0-100 scale)",
-             color = "Model",
-             title = .x) +
-        theme_bw() +
-        coord_cartesian(ylim = c(45, 60)) +
-        geom_hline(yintercept = control_mean, linewidth = 1, alpha = 0.5) +
-        geom_point(data = model_mean_y, 
-                   aes(x = param_in_b, y = pred_value), 
-                   inherit.aes = F,
-                   alpha = 0.5,
-                   size = 3) +
-        geom_text_repel(data = model_mean_y, 
-                        aes(x = param_in_b, y = pred_value, label = model), 
-                        inherit.aes = F) +
-        theme(legend.position = c(0.85, 0.5),
-              legend.box.background = element_rect(),
-              plot.title = element_text(hjust = 0.5),
-              panel.grid.minor = element_blank())
-      
-      if(.x == "Log scale") {
-        g <- 
-          g + 
-          scale_x_log10() +
-          annotate("text", label = "Mean attitude in control group",
-                   x = 100, 
-                   y = control_mean - 0.25,
-                   hjust = 1, fontface = "bold") +
-          annotate("text", label = "Points show mean attitude in LM groups",
-                   x = log(50, 10), 
-                   y = 60,
-                   fontface = "bold")
-      } else {
-        g <- 
-          g + 
-          theme(legend.position = "none",
-                axis.ticks.y = element_blank(),
-                axis.text.y = element_blank()) + 
-          labs(y = "")
-      }
-      
-      g
-      
-    })
+        
+        g <-
+          specifications %>% 
+          unnest(cols = pred_values) %>% 
+          rename(param_in_b = parameters) %>% 
+          mutate(model = factor(model, levels = model_order)) %>% 
+          ggplot(aes(x = param_in_b, y = pred_value, color = model, linetype = model)) +
+          theme_bw(base_family = "Times New Roman") +
+          theme(text = element_text(family = "Times New Roman")) +
+          geom_hline(yintercept = control_mean, linetype = "dashed", color = "#404040", alpha = 0.85) +
+          geom_point(data = model_mean_y,
+                     aes(x = param_in_b, y = pred_value),
+                     color = "#304f5f",
+                     inherit.aes = F,
+                     alpha = .5, size = 3, stroke = 0) +
+          geom_text_repel(data = model_mean_y, 
+                          aes(x = param_in_b, y = pred_value, label = model), 
+                          inherit.aes = F,
+                          color = "#304f5f",
+                          alpha = .5,
+                          family = "Times New Roman") +
+          geom_line(aes(size = model), alpha = 1) +
+          scale_color_manual(values = custom_colors) +
+          scale_linetype_manual(values = custom_linetypes) +
+          scale_size_manual(values = custom_sizes) +
+          labs(x = "Model Parameters (Billions)", 
+               y = "Policy Attitude (0-100 Scale)",
+               color = "Model",
+               linetype = "Model",
+               size = "Model",
+               title = .x) +
+          coord_cartesian(ylim = c(45, 60)) +
+          theme(axis.ticks.x = element_line(size = 0.25),
+                axis.ticks.y = element_line(size = 0.25),
+                axis.line = element_line(color = "black", size = 0.25),
+                plot.title = element_text(hjust = 0.5, size = 16),
+                panel.grid = element_blank(),
+                panel.grid.minor = element_blank(),
+                panel.border = element_blank(),
+                axis.title.x = element_text(size = 16, face = "bold"),
+                axis.title.y = element_text(size = 16, face = "bold", margin = margin(r = 10)),
+                legend.text = element_text(size = 12),
+                axis.text.x = element_text(size = 14),
+                axis.text.y = element_text(size = 14))
+        
+        if(.x == "Log scale") {
+          g <- 
+            g + 
+            scale_x_log10() +
+            annotate("text", label = "Control",
+                     x = 100, 
+                     y = control_mean + 0.25,
+                     hjust = 1, fontface = "bold", family = "Times New Roman") +
+            theme(legend.position = "none")  
+        } else {
+          g <- 
+            g + 
+            theme(legend.position = c(0.95, 0.05),  
+                  legend.justification = c(1, 0),   
+                  legend.box.background = element_rect(),
+                  legend.title = element_blank(),   
+                  axis.ticks.y = element_blank(),
+                  axis.text.y = element_blank()) + 
+            labs(y = "")
+        }
+        
+        g
+        
+      })
 
+# Update the final plot
 g <- plot_grid(out_plots[[2]], out_plots[[1]], labels = "AUTO")
-
 ggsave(plot = g, filename = "output/plots/nonlinear_comparisons.pdf",
-       height = 7, width = 14)
+       height = 7, width = 14, device = cairo_pdf)
 
 
 
